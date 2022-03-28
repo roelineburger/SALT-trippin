@@ -1,0 +1,28 @@
+{
+  "parks": [
+    {
+      "name": "Tyresta National Park",
+      "coords": {
+        "lat": 59.18,
+        "lng": 18.28
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Abisko National Park",
+      "coords": {
+        "lat": 68.31,
+        "lng": 18.68
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Fulufjället National Park",
+      "coords": {
+        "lat": 61.54,
+        "lng": 12.75
+      },
+      "icon": "national.svg"
+    }
+  ]
+}
