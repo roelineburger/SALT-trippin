@@ -1,25 +1,40 @@
 import { useState, useRef } from "react";
 import { Autocomplete } from "@react-google-maps/api";
 
-const Form = ({ setdirectionsResponse }) => {
+const Form = ({ setdirectionsResponse, points }) => {
   const originRef = useRef();
   const destinationRef = useRef();
-
+  
   const [distance, setDistance] = useState("");
   const [duration, setDuration] = useState("");
+  
+  const waypoints = [];
+
+  points.map(point => {
+    return waypoints.push({
+      location: {
+        lat: point.lat,
+        lng: point.lng
+      },
+      stopover: false
+    })
+  })
 
   const calculateRoute = async (e) => {
     e.preventDefault();
     if (originRef.current.value === "" || destinationRef.current.value === "") {
-      return;
+      return
     }
-
+    
     const directionService = new window.google.maps.DirectionsService();
     const results = await directionService.route({
-      origin: originRef.current.value,
+      origin: originRef.current.value, 
       destination: destinationRef.current.value,
+      waypoints,
       travelMode: "DRIVING",
+      optimizeWaypoints: true
     });
+    
 
     setdirectionsResponse(results);
     setDistance(results.routes[0].legs[0].distance.text);

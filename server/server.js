@@ -1,7 +1,12 @@
 import express from "express";
+import {readFile} from 'fs/promises'
 import cors from "cors";
-import parks from "./parkdb.json" assert { type: "json" };
-// import ParkLogo from "../assets/national.svg";
+
+const parks = JSON.parse(
+  await readFile(
+    new URL('./parkdb.json', import.meta.url)
+  )
+);
 
 const app = express();
 
