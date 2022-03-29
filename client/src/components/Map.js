@@ -18,8 +18,11 @@ const Map = () => {
   const [destination, setDestination] = useState('')
   
   const options = useMemo(() => ({
-      mapId: '19283767c2583acc'
+      mapId: '19283767c2583acc',
+      mapTypeControl: false,
+      fullscreenControl: false,
   }), [])
+
 
   const [directionsResponse, setdirectionsResponse] = useState(null);
   const { isLoaded } = useJsApiLoader({
