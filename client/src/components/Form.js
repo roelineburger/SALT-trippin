@@ -1,13 +1,16 @@
 import { useState, useRef } from "react";
 import { Autocomplete } from "@react-google-maps/api";
+import "./Form.scss"
 
-const Form = ({ setdirectionsResponse, points }) => {
+const Form = ({ setdirectionsResponse, points, destination }) => {
   const originRef = useRef();
   const destinationRef = useRef();
+  console.log(destination)
   
   const [distance, setDistance] = useState("");
   const [duration, setDuration] = useState("");
-  
+  const [info, setInfo] = useState(false)
+
   const waypoints = [];
 
   points.map(point => {
@@ -22,14 +25,14 @@ const Form = ({ setdirectionsResponse, points }) => {
 
   const calculateRoute = async (e) => {
     e.preventDefault();
-    if (originRef.current.value === "" || destinationRef.current.value === "") {
-      return
-    }
+    // if (originRef.current.value === "" || destinationRef.current.value === "") {
+    //   return
+    // }
     
     const directionService = new window.google.maps.DirectionsService();
     const results = await directionService.route({
       origin: originRef.current.value, 
-      destination: destinationRef.current.value,
+      destination: destinationRef.current.value || destination,
       waypoints,
       travelMode: "DRIVING",
       optimizeWaypoints: true
@@ -39,21 +42,26 @@ const Form = ({ setdirectionsResponse, points }) => {
     setdirectionsResponse(results);
     setDistance(results.routes[0].legs[0].distance.text);
     setDuration(results.routes[0].legs[0].duration.text);
+    setInfo(true);
   };
 
   return (
     <div className="form-container">
-      <form>
+      <form className="form-container__form">
         <Autocomplete>
-          <input ref={originRef} type="text" placeholder="origin" />
+          <input ref={originRef} type="text" placeholder="Origin" className="form-container__input"/>
         </Autocomplete>
         <Autocomplete>
-          <input ref={destinationRef} type="text" placeholder="destination" />
+          <input ref={destinationRef} type="text" placeholder={destination ? destination : 'Destination'} className="form-container__input"/>
         </Autocomplete>
-        <button onClick={calculateRoute}>Get Route</button>
+        <button onClick={calculateRoute} className="form-container__button">GET ROUTE</button>
       </form>
-      <p>Distance: {distance}</p>
-      <p>Duration: {duration}</p>
+      {info && (
+        <section className="form-routeinfo">
+          <p>Distance: {distance}</p>
+          <p>Duration: {duration}</p>
+        </section> 
+      )}
     </div>
   );
 };
