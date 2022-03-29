@@ -1,0 +1,64 @@
+@use '../base';
+
+.form-container {
+  position: absolute;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  background-color: white;
+  padding: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__input {
+    display:block;
+    height:30px;
+    width:170px;
+    margin:0.2em auto;
+    border: none;
+    border-bottom:1px solid #84909f;
+
+    &::placeholder {
+      -webkit-transform:translateY(0px);
+      transform:translateY(0px);
+      -webkit-transition:.5s;
+      transition:.5s;
+    }
+
+    &:hover,
+    &:focus,
+    &.active:focus {
+      color: base.$button-color;
+      outline:none;
+      border-bottom:1px solid #84909f;
+    }
+  }
+
+  &__button {
+    border: none;
+    color: white;
+    background-color: base.$button-color;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1em;
+    padding: .5em 1em;
+    font-family: Roboto;
+    font-style: normal;
+    margin-top: 1em;
+    letter-spacing: 1px;
+
+    &:hover {
+    opacity: 0.8;
+    }
+  }
+}
+

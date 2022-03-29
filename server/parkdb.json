@@ -1,7 +1,7 @@
 {
   "parks": [
     {
-      "name": "Tyresta National Park",
+      "name": "Tyresta parkering",
       "coords": {
         "lat": 59.18,
         "lng": 18.28
@@ -21,6 +21,48 @@
       "coords": {
         "lat": 61.54,
         "lng": 12.75
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Visitor Center Laponia",
+      "coords": {
+        "lat": 67.28,
+        "lng": 17.70
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Björnlandets Nationalpark",
+      "coords": {
+        "lat": 63.97,
+        "lng": 18.04
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Oskarshamn Gotlandsterminalen",
+      "route": "Blå Jungfruns Nationalpark",
+      "coords": {
+        "lat": 57.25242064811306,
+        "lng": 16.792718004385737
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Dalby Söderskog National Park",
+      "coords": {
+        "lat": 55.676296,
+        "lng": 13.330378
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Brommö Store Vite Sand, 542 91 Torsö",
+      "route": "Djurö Nationalpark",
+      "coords": {
+        "lat": 58.86,
+        "lng": 13.46
       },
       "icon": "national.svg"
     }
