@@ -33,7 +33,7 @@ const Map = () => {
 
   useEffect(() => {
     const getParks = async () => {
-      const query = await fetch("http://localhost:4000/parks");
+      const query = await fetch("http://localhost:8080/parks");
       const json = await query.json();
       setParks(json.parks);
     };
@@ -77,7 +77,7 @@ const Map = () => {
           <Marker position={{ lat: point.lat, lng: point.lng }} key={index} />
         ))}
         {parks.map((park, index) => (
-          <Marker onClick={() => onMarkerClick(park.name)} position={park.coords} icon={ParkLogo} key={index} />
+          <Marker onClick={() => onMarkerClick(park.route)} position={park.coords} icon={ParkLogo} key={index} />
         ))}
       </GoogleMap>
     </div>

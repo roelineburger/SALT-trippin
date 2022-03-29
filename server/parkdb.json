@@ -1,15 +1,8 @@
 {
   "parks": [
     {
-      "name": "Tyresta parkering",
-      "coords": {
-        "lat": 59.18,
-        "lng": 18.28
-      },
-      "iconUrl": "/logos/national"
-    },
-    {
       "name": "Abisko National Park",
+      "route": "Abisko National Park",
       "coords": {
         "lat": 68.31,
         "lng": 18.68
@@ -17,23 +10,8 @@
       "icon": "national.svg"
     },
     {
-      "name": "Fulufjället National Park",
-      "coords": {
-        "lat": 61.54,
-        "lng": 12.75
-      },
-      "icon": "national.svg"
-    },
-    {
-      "name": "Visitor Center Laponia",
-      "coords": {
-        "lat": 67.28,
-        "lng": 17.70
-      },
-      "icon": "national.svg"
-    },
-    {
-      "name": "Björnlandets Nationalpark",
+      "name": "Björnlandet National Park",
+      "route": "Björnlandets Nationalpark",
       "coords": {
         "lat": 63.97,
         "lng": 18.04
@@ -41,8 +19,8 @@
       "icon": "national.svg"
     },
     {
-      "name": "Oskarshamn Gotlandsterminalen",
-      "route": "Blå Jungfruns Nationalpark",
+      "name": "Blå Jungfrun National Park",
+      "route": "Oskarshamn Gotlandsterminalen",
       "coords": {
         "lat": 57.25242064811306,
         "lng": 16.792718004385737
@@ -51,6 +29,7 @@
     },
     {
       "name": "Dalby Söderskog National Park",
+      "route": "Dalby Söderskog National Park",
       "coords": {
         "lat": 55.676296,
         "lng": 13.330378
@@ -58,13 +37,238 @@
       "icon": "national.svg"
     },
     {
-      "name": "Brommö Store Vite Sand, 542 91 Torsö",
-      "route": "Djurö Nationalpark",
+      "name": "Djurö National Park",
+      "route": "Brommö Store Vite Sand, 542 91 Torsö",
       "coords": {
         "lat": 58.86,
         "lng": 13.46
       },
       "icon": "national.svg"
+    },
+    {
+      "name": "Fulufjället National Park",
+      "route": "Fulufjället National Park",
+      "coords": {
+        "lat": 61.54,
+        "lng": 12.75
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Färnebofjärden National Park",
+      "route": "Färnebofjärden Parkering",
+      "coords": {
+        "lat": 60.22659753454934,
+        "lng": 16.798282315577154
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Garphyttan National Park",
+      "route": "Garphyttan Nationalpark",
+      "coords": {
+        "lat": 59.27948058222777,
+        "lng": 14.883362760988511
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Gotska Sandön National Park",
+      "route": "Fiskargränd Parking",
+      "coords": {
+        "lat": 58.36696556517433,
+        "lng": 19.243882170903145
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Hamra National Park",
+      "route": "Huvudentré Hamra nationalpark",
+      "coords": {
+        "lat": 61.76318718138302,
+        "lng": 14.756621987581862
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Haparanda Skärgård National Park",
+      "route": "Båtklubben Bothnia",
+      "coords": {
+        "lat": 65.5773615241941,
+        "lng": 23.74821672774236
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Kosterhavets National Park",
+      "route": "Entrance Tjärnö / Saltö",
+      "coords": {
+        "lat": 58.83817785505301,
+        "lng": 11.033997180993785
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Muddus/Muottos National Park",
+      "route": "Sarkavare",
+      "coords": {
+        "lat": 66.92864214591357,
+        "lng": 20.219174702648694
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Norra Kvill National Park",
+      "route": "Norra Kvill Parkeringsplats",
+      "coords": {
+        "lat": 57.7630170915994,
+        "lng": 15.593877567735197
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Padjelanta/ Badjelánnda National",
+      "route": "STF Kvikkjokk Fjällstation",
+      "coords": {
+        "lat": 67.45016393839184,
+        "lng": 16.94987113812627
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Pieljekaise National Park",
+      "route": "Jäkkvik",
+      "coords": {
+        "lat": 66.3505790959157,
+        "lng": 16.74275878544594
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Sarek National Park",
+      "route": "Visitor Center Laponia",
+      "coords": {
+        "lat": 67.28,
+        "lng": 17.70
+      },
+      "icon": "national.svg"
+    },
+    {
+      "name": "Skuleskogens National Park",
+      "route": "Skuleskogen National Park, Entre West",
+      "coords": {
+        "lat": 63.11999498254023,
+        "lng": 18.493830022256432
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Sonfjället National Park",
+      "route": "Sonfjället National Park",
+      "coords": {
+        "lat": 62.300034893272745,
+        "lng": 13.583333298774361
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Stenshuvud National Park",
+      "route": "Stenshuvud's National Park",
+      "coords": {
+        "lat": 55.65634889337625,
+        "lng": 14.26870752380453
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Stora Sjöfallet National Park",
+      "route": "Stora Sjöfallets / Stuor Muorkke nationalpark",
+      "coords": {
+        "lat": 67.56023160395537,
+        "lng": 18.03773962967538
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Store Mosse National Park",
+      "route": "Greater Mosse National Park",
+      "coords": {
+        "lat": 57.300032957878926,
+        "lng": 13.92985288508819
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Söderåsen National Park",
+      "route": "Söderåsens Nationalpark",
+      "coords": {
+        "lat": 56.03867299736218,
+        "lng": 13.251290224613928
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Tiveden National Park",
+      "route": "Tiveden National Park",
+      "coords": {
+        "lat": 58.71713146583187,
+        "lng": 14.606502798634427
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Tresticklan National Park",
+      "route": "Tresticklan National Park",
+      "coords": {
+        "lat": 59.043924500267885,
+        "lng": 11.795091213990618
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Tyresta National Park",
+      "route": "Tyresta parkering",
+      "coords": {
+        "lat": 59.18,
+        "lng": 18.28
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Töfsingdalens National Park",
+      "route": "STF Grövelsjön Fjällstation",
+      "coords": {
+        "lat": 62.167032384492494,
+        "lng": 12.450465156440893
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Vadvetjåkka National Park",
+      "route": "Björkstugan",
+      "coords": {
+        "lat": 68.53989611094642,
+        "lng": 18.43446775484941
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Åsnen National Park",
+      "route": "Åsnen National Park",
+      "coords": {
+        "lat": 56.63995295996662,
+        "lng": 14.668796121620892
+      },
+      "iconUrl": "/logos/national"
+    },
+    {
+      "name": "Ängsö National Park",
+      "route": "Ängsö National Park",
+      "coords": {
+        "lat": 59.617327387185256,
+        "lng": 18.760817327505027
+      },
+      "iconUrl": "/logos/national"
     }
   ]
 }
