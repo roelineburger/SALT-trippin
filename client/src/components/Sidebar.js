@@ -3,7 +3,7 @@ import Form from './Form'
 import Fuel from './Fuel'
 import './Sidebar.scss'
 
-const Sidebar = ({ destination, setdirectionsResponse, points }) => {
+const Sidebar = ({ destination, setdirectionsResponse, points, setPoints }) => {
   const [distance, setDistance] = useState("");
   const [info, setInfo] = useState(false);
 
@@ -13,6 +13,7 @@ const Sidebar = ({ destination, setdirectionsResponse, points }) => {
         destination={destination}
         setdirectionsResponse={setdirectionsResponse}
         points={points}
+        setPoints={setPoints}
         setDistance={setDistance}
         distance={distance}
         info={info}
