@@ -1,0 +1,15 @@
+@use '../base';
+
+.sidebar-container {
+  position: absolute;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  background-color: white;
+  padding: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}

@@ -5,8 +5,8 @@ import {
   DirectionsRenderer,
   Marker,
 } from "@react-google-maps/api";
-import Form from "./Form";
 import ParkLogo from "../assets/national.svg";
+import Sidebar from "./Sidebar";
 
 const libraries = ["places"];
 
@@ -61,7 +61,7 @@ const Map = () => {
 
   return isLoaded ? (
     <div>
-      <Form destination={destination} setdirectionsResponse={setdirectionsResponse} points={points} />
+      <Sidebar destination={destination} setdirectionsResponse={setdirectionsResponse} points={points}/>
       <GoogleMap
         zoom={5}
         mapContainerStyle={{ width: "100vw", height: "100vh" }}
