@@ -35,7 +35,7 @@ const Form = ({ setdirectionsResponse, points, destination }) => {
   }
 
   const getFuelPrice = async () => {
-    const query = await fetch('http://localhost:4000/fuel');
+    const query = await fetch('http://localhost:8080/fuel');
     const json = await query.json();
     const petrol = mileagePrice(stringToNumber(distance), parseFloat(json.petrol));
     const diesel = mileagePrice(stringToNumber(distance), parseFloat(json.diesel));
