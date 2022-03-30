@@ -16,7 +16,7 @@ const Map = () => {
   const [parks, setParks] = useState([]);
   const [points, setPoints] = useState([]);
   const [destination, setDestination] = useState('')
-  
+
   const options = useMemo(() => ({
       mapId: '19283767c2583acc',
       mapTypeControl: false,
@@ -46,6 +46,7 @@ const Map = () => {
     if (directionsResponse) {
       const lat = parseFloat(waypoint.latLng.lat().toFixed(8));
       const lng = parseFloat(waypoint.latLng.lng().toFixed(8));
+      console.log(waypoint.latLng);
   
       setPoints((current) => [...current, { 
         lat: Number(lat),
@@ -58,6 +59,7 @@ const Map = () => {
   const onMarkerClick = (park) => {
     setDestination(park)
   }
+ 
 
   return isLoaded ? (
     <div>

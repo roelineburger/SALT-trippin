@@ -23,4 +23,4 @@ const Sidebar = ({ destination, setdirectionsResponse, points }) => {
   )
 }
 
-export default Sidebar
+export default Sidebar;
