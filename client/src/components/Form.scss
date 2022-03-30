@@ -17,7 +17,31 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
+
+  &__waypoint-button {
+    margin-top: 1em;
+    background-color: base.$accent-color;
+    border-radius: 50%;
+    border: none;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 18px;
+
+    &:hover {
+      border: 1px solid black;
+    }
+
+    &:active {
+      background: none;
+    }
+    
+    &--hidden {
+      display: none;
+    }
+  }
+  
 
   &__input {
     display:block;
@@ -41,6 +65,11 @@
       outline:none;
       border-bottom:1px solid #84909f;
     }
+
+    &--hidden {
+      display: none;
+    }
+    
   }
 
   &__button {
@@ -61,4 +90,3 @@
     }
   }
 }
-

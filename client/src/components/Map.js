@@ -46,13 +46,13 @@ const Map = () => {
     if (directionsResponse) {
       const lat = parseFloat(waypoint.latLng.lat().toFixed(8));
       const lng = parseFloat(waypoint.latLng.lng().toFixed(8));
-      console.log(waypoint.latLng);
   
       setPoints((current) => [...current, { 
         lat: Number(lat),
         lng: Number(lng),
-        latLng: waypoint.latLng
-      }])
+        // latLng: waypoint.latLng
+      }
+    ])
     }
   })
 
@@ -60,10 +60,13 @@ const Map = () => {
     setDestination(park)
   }
  
-
   return isLoaded ? (
     <div>
-      <Sidebar destination={destination} setdirectionsResponse={setdirectionsResponse} points={points}/>
+      <Sidebar
+        destination={destination}
+        setdirectionsResponse={setdirectionsResponse}
+        points={points}
+        setPoints={setPoints} />
       <GoogleMap
         zoom={5}
         mapContainerStyle={{ width: "100vw", height: "100vh" }}
@@ -73,13 +76,27 @@ const Map = () => {
         options={options}
       >
         {directionsResponse && (
-          <DirectionsRenderer directions={directionsResponse} suppressMarkers={true}/>
+          <DirectionsRenderer
+            directions={directionsResponse}
+            // onDirectionsChanged={() => directionsResponse}
+            // options={{
+            //   draggable: true,
+            //   panel: test,
+            //   suppressMarkers: true
+            // }} 
+            />
         )}
         {points.map((point, index) => (
-          <Marker position={{ lat: point.lat, lng: point.lng }} key={index} />
+          <Marker
+            position={{ lat: point.lat, lng: point.lng }}
+            key={index} />
         ))}
         {parks.map((park, index) => (
-          <Marker onClick={() => onMarkerClick(park.route)} position={park.coords} icon={ParkLogo} key={index} />
+          <Marker
+            onClick={() => onMarkerClick(park.route)}
+            position={park.coords}
+            icon={ParkLogo}
+            key={index} />
         ))}
       </GoogleMap>
     </div>

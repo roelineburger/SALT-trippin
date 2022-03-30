@@ -29,7 +29,7 @@ const Fuel = ({ distance, info }) => {
 
   return  info ? (
     <>
-        <button onClick={getFuelPrice} className="form-container__button">GET GAS COST</button>
+        <button onClick={getFuelPrice} className="form-container__button">GET FUEL COST</button>
           {cost && (
             <section>
               <p>Petrol Price: {petrolPrice} Kr</p>
