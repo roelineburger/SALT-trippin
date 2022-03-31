@@ -1,16 +1,16 @@
-import express from "express";
-import { readFile } from 'fs/promises'
+import express from 'express';
+import { readFile } from 'fs/promises';
 
-const router = express.Router()
+const router = express.Router();
 
 const parks = JSON.parse(
   await readFile(
-    new URL('../parkdb.json', import.meta.url)
-  )
+    new URL('../parkdb.json', import.meta.url),
+  ),
 );
 
-router.get("/", (_, res) => {
+router.get('/', (_, res) => {
   res.json(parks);
-})
+});
 
-export { router as default }
+export default router;
