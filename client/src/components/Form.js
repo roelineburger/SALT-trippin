@@ -77,7 +77,7 @@ const Form = ({ setdirectionsResponse, points, setPoints, destination, distance,
           onClick={addWaypointInput}>+</button>
           {points.map((point,index) => (
             <section key={index}>
-              <p>Point: {index}</p>
+              <p>{point.name}</p>
               <button  onClick={(e)=> removeOneWaypoint(e, point.lat)}>x</button>
             </section>
           ))}
