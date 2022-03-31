@@ -17,10 +17,11 @@ const Map = () => {
   const [points, setPoints] = useState([]);
   const [destination, setDestination] = useState('')
 
+
   const options = useMemo(() => ({
-      mapId: '19283767c2583acc',
-      mapTypeControl: false,
-      fullscreenControl: false,
+    mapId: '19283767c2583acc',
+    mapTypeControl: false,
+    fullscreenControl: false,
   }), [])
 
 
@@ -42,24 +43,31 @@ const Map = () => {
 
   const onLoad = useCallback((map) => (mapRef.current = map), []);
 
-  const onMapClick = useCallback((waypoint) => {
+  const onMapClick = async (waypoint) => {
     if (directionsResponse) {
       const lat = parseFloat(waypoint.latLng.lat().toFixed(8));
       const lng = parseFloat(waypoint.latLng.lng().toFixed(8));
-  
-      setPoints((current) => [...current, { 
+
+      const geocoder = new window.google.maps.Geocoder();
+      const geocodeResult = await geocoder.geocode({
+        location: waypoint.latLng
+      })
+
+      console.log(geocodeResult)
+
+      setPoints((current) => [...current, {
         lat: Number(lat),
         lng: Number(lng),
-        // latLng: waypoint.latLng
+        name: geocodeResult.results[3].formatted_address
       }
-    ])
+      ])
     }
-  })
+  }
 
   const onMarkerClick = (park) => {
     setDestination(park)
   }
- 
+
   return isLoaded ? (
     <div>
       <Sidebar
@@ -78,13 +86,13 @@ const Map = () => {
         {directionsResponse && (
           <DirectionsRenderer
             directions={directionsResponse}
-            // onDirectionsChanged={() => directionsResponse}
-            // options={{
-            //   draggable: true,
-            //   panel: test,
-            //   suppressMarkers: true
-            // }} 
-            />
+          // onDirectionsChanged={() => directionsResponse}
+          // options={{
+          //   draggable: true,
+          //   panel: test,
+          //   suppressMarkers: true
+          // }} 
+          />
         )}
         {points.map((point, index) => (
           <Marker
