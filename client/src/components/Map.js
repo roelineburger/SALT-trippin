@@ -1,47 +1,49 @@
-import { useCallback, useState, useMemo, useRef, useEffect } from "react";
+import React, {
+  useCallback, useState, useMemo, useRef, useEffect,
+} from 'react';
 import {
   GoogleMap,
   useJsApiLoader,
   DirectionsRenderer,
   Marker,
-} from "@react-google-maps/api";
-import ParkLogo from "../assets/national.svg";
-import Sidebar from "./Sidebar";
+} from '@react-google-maps/api';
+import ParkLogo from '../assets/national.svg';
+import Sidebar from './Sidebar';
 
-const libraries = ["places"];
+const libraries = ['places'];
 
-const Map = () => {
+function Map() {
   const mapRef = useRef({});
   const center = useMemo(() => ({ lat: 63.50, lng: 17.34 }), []);
   const [parks, setParks] = useState([]);
   const [points, setPoints] = useState([]);
-  const [destination, setDestination] = useState('')
-
+  const [destination, setDestination] = useState('');
 
   const options = useMemo(() => ({
     mapId: '19283767c2583acc',
     mapTypeControl: false,
     fullscreenControl: false,
-  }), [])
-
+  }), []);
 
   const [directionsResponse, setdirectionsResponse] = useState(null);
   const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
+    id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
     libraries,
   });
 
   useEffect(() => {
     const getParks = async () => {
-      const query = await fetch("http://localhost:8080/parks");
+      const query = await fetch('http://localhost:8080/parks');
       const json = await query.json();
       setParks(json.parks);
     };
     getParks();
   }, []);
 
-  const onLoad = useCallback((map) => (mapRef.current = map), []);
+  const onLoad = useCallback((map) => {
+    mapRef.current = map;
+  }, []);
 
   const onMapClick = async (waypoint) => {
     if (directionsResponse) {
@@ -50,23 +52,21 @@ const Map = () => {
 
       const geocoder = new window.google.maps.Geocoder();
       const geocodeResult = await geocoder.geocode({
-        location: waypoint.latLng
-      })
-
-      console.log(geocodeResult)
+        location: waypoint.latLng,
+      });
 
       setPoints((current) => [...current, {
         lat: Number(lat),
         lng: Number(lng),
-        name: geocodeResult.results[3].formatted_address
-      }
-      ])
+        name: geocodeResult.results[3].formatted_address,
+      },
+      ]);
     }
-  }
+  };
 
   const onMarkerClick = (park) => {
-    setDestination(park)
-  }
+    setDestination(park);
+  };
 
   return isLoaded ? (
     <div>
@@ -74,10 +74,11 @@ const Map = () => {
         destination={destination}
         setdirectionsResponse={setdirectionsResponse}
         points={points}
-        setPoints={setPoints} />
+        setPoints={setPoints}
+      />
       <GoogleMap
         zoom={5}
-        mapContainerStyle={{ width: "100vw", height: "100vh" }}
+        mapContainerStyle={{ width: '100vw', height: '100vh' }}
         center={center}
         onLoad={onLoad}
         onClick={onMapClick}
@@ -91,26 +92,28 @@ const Map = () => {
           //   draggable: true,
           //   panel: test,
           //   suppressMarkers: true
-          // }} 
+          // }}
           />
         )}
-        {points.map((point, index) => (
+        {points.map((point) => (
           <Marker
             position={{ lat: point.lat, lng: point.lng }}
-            key={index} />
+            key={point.lat}
+          />
         ))}
-        {parks.map((park, index) => (
+        {parks.map((park) => (
           <Marker
             onClick={() => onMarkerClick(park.route)}
             position={park.coords}
             icon={ParkLogo}
-            key={index} />
+            key={park.name}
+          />
         ))}
       </GoogleMap>
     </div>
   ) : (
     <></>
   );
-};
+}
 
 export default Map;

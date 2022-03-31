@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import Form from './Form'
-import Fuel from './Fuel'
-import './Sidebar.scss'
+import { useState } from 'react';
+import Form from './Form';
+import Fuel from './Fuel';
+import './Sidebar.scss';
 
-const Sidebar = ({ destination, setdirectionsResponse, points, setPoints }) => {
-  const [distance, setDistance] = useState("");
+function Sidebar({
+  destination, setdirectionsResponse, points, setPoints,
+}) {
+  const [distance, setDistance] = useState('');
   const [info, setInfo] = useState(false);
 
   return (
     <div className="sidebar-container">
-      <Form 
+      <Form
         destination={destination}
         setdirectionsResponse={setdirectionsResponse}
         points={points}
@@ -19,9 +21,9 @@ const Sidebar = ({ destination, setdirectionsResponse, points, setPoints }) => {
         info={info}
         setInfo={setInfo}
       />
-      <Fuel distance={distance} info={info}/>
+      <Fuel distance={distance} info={info} />
     </div>
-  )
+  );
 }
 
 export default Sidebar;

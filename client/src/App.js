@@ -1,13 +1,22 @@
-import React from "react";
-import "./App.scss";
-import Map from "./components/Map";
+import React from 'react';
+import './App.scss';
+import { Routes, Route } from 'react-router-dom';
+import Map from './components/Map';
+import LandingPage from './components/LandingPage';
+import About from './components/About';
+import Nav from './components/Nav';
 
-const App = () => {
+function App() {
   return (
     <div className="App">
-      <Map />
+      <Nav />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/map" element={<Map />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
-};
+}
 
 export default App;

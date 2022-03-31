@@ -1,10 +1,10 @@
-import express from "express";
+import express from 'express';
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/:id", ({ params: { id }}, res) => {
+router.get('/:id', (req, res) => {
   // res.sendFile(path.join(__dirname, './assets', `${id}.svg`));
-  res.json('logos')
-})
+  res.json('logos');
+});
 
-export { router as default }
+export default router;
