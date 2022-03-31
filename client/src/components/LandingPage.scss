@@ -1,5 +1,28 @@
+@use '../base';
+
 .landing-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: 10em;
+
+  &__button {
+    border: none;
+    color: white;
+    width: auto;
+    background-color: base.$button-color;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1em;
+    padding: .5em 1em;
+    font-family: Roboto;
+    font-style: normal;
+    margin-top: 1em;
+    letter-spacing: 1px;
+
+    &:hover {
+    opacity: 0.8;
+    }
+  }
 }

@@ -3,17 +3,20 @@ $accent-color: #D7E3FF;
 
 * {
   margin: 0;
-  font-family: "Roboto"
+  font-family: "Roboto";
+  letter-spacing: 1px;
   //   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
   //   sans-serif;
   // -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background-image: url('./assets/road.jpg');
+  background-position: cover;
+}
+
 // code {
 //   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 //     monospace;
 // }
-
-
-//84909f

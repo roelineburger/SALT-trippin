@@ -13,8 +13,8 @@ function LandingPage() {
   return (
     <>
       <div className="landing-container">
-        <h1>Welcome to our fantastic site</h1>
-        <button onClick={buttonHandler}>Go to map</button>
+        <h1>Plan your next road trip</h1>
+        <button className="landing-container__button" onClick={buttonHandler}>Go to map</button>
       </div>
     </>
   );

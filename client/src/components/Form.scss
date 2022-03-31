@@ -21,7 +21,7 @@
   }
 
   &__waypoint-button {
-    margin-top: 1em;
+    margin: 1em 0;
     background-color: base.$accent-color;
     border-radius: 50%;
     border: none;
@@ -42,12 +42,11 @@
     }
   }
   
-
   &__input {
     display:block;
-    height:30px;
-    width:170px;
-    margin:0.2em auto;
+    height: 30px;
+    width: 200px;
+    margin: 0.2em auto;
     border: none;
     border-bottom:1px solid #84909f;
 
@@ -69,7 +68,6 @@
     &--hidden {
       display: none;
     }
-    
   }
 
   &__button {
@@ -82,11 +80,50 @@
     padding: .5em 1em;
     font-family: Roboto;
     font-style: normal;
-    margin-top: 1em;
+    margin: 1em 0;
     letter-spacing: 1px;
+    align-items: center;
 
     &:hover {
     opacity: 0.8;
+    }
+  }
+}
+
+.marker-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 250px;
+  margin: 0.4em 0;
+
+  &__name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size:small;
+    width: 170px;
+  }
+
+  &__btn {
+    // margin-top: 1em;
+    margin-left: .5em;
+    background: none;
+    border: none;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 18px;
+
+    &:hover {
+     opacity: 0.6;
+    }
+
+    &:active {
+      background: none;
+    }
+    
+    &--hidden {
+      display: none;
     }
   }
 }
