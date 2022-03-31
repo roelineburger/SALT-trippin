@@ -16,6 +16,7 @@ import {
 } from 'firebase/auth';
 import auth from '../firebase-config';
 import Logo from '../assets/trippin1.svg';
+import userIcon from '../assets/user.svg';
 
 function Nav() {
   const [openSignIn, setOpenSignIn] = useState(false);
@@ -26,6 +27,7 @@ function Nav() {
   const [loginPassword, setLoginPassword] = useState('');
 
   const [user, setUser] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
 
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
@@ -38,9 +40,11 @@ function Nav() {
         registerEmail,
         registerPassword,
       );
+      setLoggedIn(true);
       console.log(registeredUser);
     } catch (error) {
       console.log(error.message);
+      alert('test');
     }
   };
 
@@ -51,14 +55,17 @@ function Nav() {
         loginEmail,
         loginPassword,
       );
+      setLoggedIn(true);
       console.log(loggedUser);
     } catch (error) {
       console.log(error.message);
+      alert('test');
     }
   };
 
   const logout = async () => {
     await signOut(auth);
+    setLoggedIn(false);
   };
 
   const handleOpenSignIn = () => {
@@ -89,15 +96,27 @@ function Nav() {
           <li className="nav-container__item">
             <Link className="nav-container__link" to="/about">About</Link>
           </li>
-          <li className="nav-container__item">
-            <button onClick={handleOpenSignIn}>Sign in</button>
-          </li>
-          <li className="nav-container__item">
-            <button onClick={handleOpenSignUp}>Sign up</button>
-          </li>
-          <li className="nav-container__item">
-            <button onClick={logout}>Sign Out</button>
-          </li>
+          {!loggedIn
+            ? (
+              <>
+                <li className="nav-container__item">
+                  <button className="nav-container__item--button" onClick={handleOpenSignIn}>Sign in</button>
+                </li>
+                <li className="nav-container__item">
+                  <button className="nav-container__item--button" onClick={handleOpenSignUp}>Sign up</button>
+                </li>
+              </>
+            )
+            : (
+              <>
+                <li className="nav-container__item">
+                  <button className="nav-container__item--button" onClick={logout}>Sign Out</button>
+                </li>
+                <li className="nav-container__item">
+                  <img src={userIcon} alt="user icon" className="nav-container__userIcon" />
+                </li>
+              </>
+            )}
         </ul>
       </nav>
       <Dialog open={openSignIn}>

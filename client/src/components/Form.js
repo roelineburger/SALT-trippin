@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { Autocomplete } from '@react-google-maps/api';
 import './Form.scss';
+import xBtn from '../assets/x.svg';
 
 function Form({
   setdirectionsResponse, points, setPoints, destination, distance, setDistance, info, setInfo,
@@ -59,11 +60,11 @@ function Form({
 
   const removeOneWaypoint = (e, id) => {
     e.preventDefault();
-    setPoints(points.filter((dogpoop) => id !== dogpoop.lat));
+    setPoints(points.filter((marker) => id !== marker.lat));
   };
 
   return (
-    <div>
+    <div className="form-container__form">
       <form className="form-container__form">
         <Autocomplete>
           <input
@@ -81,9 +82,9 @@ function Form({
           +
         </button>
         {points.map((point) => (
-          <section key={point.lat}>
-            <p>{point.name}</p>
-            <button onClick={(e) => removeOneWaypoint(e, point.lat)}>x</button>
+          <section className="marker-container" key={point.lat}>
+            <p className="marker-container__name">{point.name}</p>
+            <button className="marker-container__btn" onClick={(e) => removeOneWaypoint(e, point.lat)}><img src={xBtn} alt="X" /></button>
           </section>
         ))}
         <Autocomplete>
@@ -110,7 +111,9 @@ function Form({
           GET ROUTE
         </button>
       </form>
-      <button onClick={clearWaypoints}>CLEAR WAYPOINTS</button>
+      {waypoints.length > 0 && (
+      <button className="form-container__button" onClick={clearWaypoints}>CLEAR MARKERS</button>
+      )}
       {info && (
         <section className="form-routeinfo">
           <p>
