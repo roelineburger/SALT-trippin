@@ -91,26 +91,26 @@ function Nav() {
         <img src={Logo} alt="logo" className="nav-container__logo" />
         <ul className="nav-container__list">
           <li className="nav-container__item">
-            <Link className="nav-container__link" to="/">Home</Link>
+            <Link className="nav-container__link" to="/">HOME</Link>
           </li>
           <li className="nav-container__item">
-            <Link className="nav-container__link" to="/about">About</Link>
+            <Link className="nav-container__link" to="/about">ABOUT</Link>
           </li>
           {!loggedIn
             ? (
               <>
                 <li className="nav-container__item">
-                  <button className="nav-container__item--button" onClick={handleOpenSignIn}>Sign in</button>
+                  <button className="nav-container__item--button" onClick={handleOpenSignIn}>SIGN IN</button>
                 </li>
                 <li className="nav-container__item">
-                  <button className="nav-container__item--button" onClick={handleOpenSignUp}>Sign up</button>
+                  <button className="nav-container__item--button" onClick={handleOpenSignUp}>SIGN UP</button>
                 </li>
               </>
             )
             : (
               <>
                 <li className="nav-container__item">
-                  <button className="nav-container__item--button" onClick={logout}>Sign Out</button>
+                  <button className="nav-container__item--button" onClick={logout}>SIGN OUT</button>
                 </li>
                 <li className="nav-container__item">
                   <img src={userIcon} alt="user icon" className="nav-container__userIcon" />
@@ -139,7 +139,6 @@ function Nav() {
             }}
           />
           <TextField
-            autoFocus
             margin="dense"
             id="password"
             label="Password"
@@ -182,7 +181,6 @@ function Nav() {
             }}
           />
           <TextField
-            autoFocus
             margin="dense"
             id="password"
             label="Password"
