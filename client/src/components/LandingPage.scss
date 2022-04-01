@@ -1,28 +1,127 @@
 @use '../base';
 
-.landing-container {
+.landing-page {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10em;
+  height: 100vh;
 
-  &__button {
-    border: none;
+  &__image {
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__header {
+    background-color: white;
+    position: relative;
+    right: 1em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3em;
+    width: 100%;
     color: white;
-    width: auto;
-    background-color: base.$button-color;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1em;
-    padding: .5em 1em;
-    font-family: Roboto;
-    font-style: normal;
-    margin-top: 1em;
-    letter-spacing: 1px;
+  }
 
-    &:hover {
-    opacity: 0.8;
+  &__title {
+    margin-bottom: .5em;
+  }
+
+  &__text {
+    margin-bottom: 1em;
+  }
+  
+  &__info {
+    padding: 2em;
+    border-radius: .5em;
+    color: black;
+
+    &--button {
+      border: none;
+      color:  base.$button-color;
+      border: 2px solid base.$button-color;
+      background: none;
+      width: auto;
+      border-radius: .4em;
+      font-weight: bold;
+      font-size: 1em;
+      padding: .5em 1em;
+      font-style: normal;
+      letter-spacing: 1px;
+      max-width: 10em;
+  
+      &:hover {
+        background-color: base.$button-color ;
+        color: white;
+      }
+
+      &:active {
+      transform: translateY(4px);
+      }
     }
   }
+}
+
+.suggestions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  justify-content: space-between;
+  width: 30em;
+  scroll-behavior: smooth;
+
+  &__wrap {
+    flex: 0 0 auto;
+    position: relative;
+    background: none;
+    border: none;
+  }
+  
+  &__img {
+    border-radius: .5em;
+    width: 10em;
+    height: 15em;
+    object-fit: cover;
+
+    &:hover {
+      cursor: pointer;
+      opacity: .8;
+    }
+
+    &:active {
+      transform: translateY(4px);
+    }
+  }
+
+  &__name {
+    position: absolute;
+    top: 13em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    visibility: hidden;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+  }
+
+  &__scroll {
+    background: none;
+    border: none;
+    font-weight: bold;
+    font-size: large;
+    color: base.$button-color;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+.suggestions__wrap:hover .suggestions__name {
+  visibility: visible;
+  opacity: 1;
 }

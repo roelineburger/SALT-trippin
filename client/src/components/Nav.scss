@@ -1,3 +1,5 @@
+@use '../base';
+
 .nav-container {
   position: absolute;
   display: flex;
@@ -19,13 +21,20 @@
     font-weight: bold;
     font-size: 1em;
     padding: .5em 1em;
-    font-family: Roboto;
     font-style: normal;
   }
 
   &__link {
     text-decoration: none;
     color: black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: base.$button-color;
+    }
   }
 
   &__item {
@@ -36,15 +45,20 @@
       border: none;
       background: none;
       font-weight: bold;
-      font-style: normal;
       font-size: 1em;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: base.$button-color;
+      }
     }
   }
 
   &__logo {
-    margin-left: 1em;
+    margin-left: 2em;
+    color: white;
   }
-
 }
-
-
