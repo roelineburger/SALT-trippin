@@ -10,6 +10,11 @@ const app = express();
 
 app.use(cors());
 
+// Express only serves static assets in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
+
 app.use('/fuel', fuelRouter);
 app.use('/parks', parksRouter);
 app.use('/logos', logosRouter);
