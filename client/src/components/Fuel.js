@@ -6,7 +6,7 @@ const stringToNumber = (string) => {
   return Number(almostNotString);
 };
 
-function Fuel({ distance, info }) {
+const Fuel = ({ distance, info }) => {
   const [petrolPrice, setPetrolPrice] = useState(0);
   const [dieselPrice, setDieselPrice] = useState(0);
   const [cost, setCost] = useState(false);
@@ -51,6 +51,6 @@ function Fuel({ distance, info }) {
       )}
     </>
   ) : <></>;
-}
+};
 
 export default Fuel;

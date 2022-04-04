@@ -6,17 +6,15 @@ import LandingPage from './components/LandingPage';
 import About from './components/About';
 import Nav from './components/Nav';
 
-function App() {
-  return (
-    <div className="App">
-      <Nav />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/map" element={<Map />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Nav />
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/map" element={<Map />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
+  </div>
+);
 
 export default App;

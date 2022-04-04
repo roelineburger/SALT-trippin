@@ -1,0 +1,40 @@
+@use "../base";
+
+.about-page {
+  display: flex;
+  height: 100vh;
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__header {
+    background-color: white;
+    position: relative;
+    right: 1em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3em;
+    width: 100%;
+    color: white;
+  }
+
+  &__title {
+    margin-bottom: 0.5em;
+  }
+
+  &__text {
+    margin-bottom: 1em;
+  }
+
+  &__info {
+    padding: 2em;
+    border-radius: 0.5em;
+    color: black;
+  }
+}

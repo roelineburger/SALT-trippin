@@ -3,9 +3,9 @@ import { Autocomplete } from '@react-google-maps/api';
 import './Form.scss';
 import xBtn from '../assets/x.svg';
 
-function Form({
+const Form = ({
   setdirectionsResponse, points, setPoints, destination, distance, setDistance, info, setInfo,
-}) {
+}) => {
   const originRef = useRef();
   const waypointRef = useRef();
   const destinationRef = useRef();
@@ -112,7 +112,7 @@ function Form({
         </button>
       </form>
       {waypoints.length > 0 && (
-      <button className="form-container__button" onClick={clearWaypoints}>CLEAR MARKERS</button>
+        <button className="form-container__button" onClick={clearWaypoints}>CLEAR MARKERS</button>
       )}
       {info && (
         <section className="form-routeinfo">
@@ -128,6 +128,6 @@ function Form({
       )}
     </div>
   );
-}
+};
 
 export default Form;
