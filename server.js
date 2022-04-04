@@ -1,9 +1,13 @@
 import express from 'express';
 import cors from 'cors';
-import path from 'path';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import parksRouter from './routes/parks.js';
 import fuelRouter from './routes/fuel.js';
 import logosRouter from './routes/logos.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const port = process.env.PORT || 8080;
 
