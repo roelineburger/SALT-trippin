@@ -6,9 +6,11 @@ import {
   useJsApiLoader,
   DirectionsRenderer,
   Marker,
+  InfoWindow,
 } from '@react-google-maps/api';
 import ParkLogo from '../assets/national.svg';
 import Sidebar from './Sidebar';
+import './Map.scss';
 
 const libraries = ['places'];
 
@@ -18,6 +20,7 @@ function Map() {
   const [parks, setParks] = useState([]);
   const [points, setPoints] = useState([]);
   const [destination, setDestination] = useState('');
+  const [selected, setSelected] = useState(null);
 
   const options = useMemo(() => ({
     mapId: '19283767c2583acc',
@@ -25,7 +28,7 @@ function Map() {
     fullscreenControl: false,
   }), []);
 
-  const [directionsResponse, setdirectionsResponse] = useState(null);
+  const [directionsResponse, setdirectionsResponse] = useState(null || JSON.parse(localStorage.getItem('route')));
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
@@ -45,6 +48,10 @@ function Map() {
     mapRef.current = map;
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('route', JSON.stringify(directionsResponse));
+  }, [directionsResponse]);
+
   const onMapClick = async (waypoint) => {
     if (directionsResponse) {
       const lat = parseFloat(waypoint.latLng.lat().toFixed(8));
@@ -62,10 +69,6 @@ function Map() {
       },
       ]);
     }
-  };
-
-  const onMarkerClick = (park) => {
-    setDestination(park);
   };
 
   return isLoaded ? (
@@ -103,12 +106,34 @@ function Map() {
         ))}
         {parks.map((park) => (
           <Marker
-            onClick={() => onMarkerClick(park.route)}
+            onClick={() => {
+              setDestination(park.route);
+              setSelected(park);
+            }}
             position={park.coords}
             icon={ParkLogo}
             key={park.name}
           />
         ))}
+        {selected ? (
+          <InfoWindow
+            position={{ lat: selected.coords.lat, lng: selected.coords.lng }}
+            onCloseClick={() => {
+              setSelected(null);
+            }}
+          >
+            <div className="info-container">
+              <h3>
+                {selected.name}
+              </h3>
+              <img
+                className="info-container__img"
+                src={selected.img}
+                alt="pic"
+              />
+            </div>
+          </InfoWindow>
+        ) : null}
       </GoogleMap>
     </div>
   ) : (
