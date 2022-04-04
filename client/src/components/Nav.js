@@ -18,7 +18,7 @@ import auth from '../firebase-config';
 import Logo from '../assets/trippin1.svg';
 import userIcon from '../assets/user.svg';
 
-function Nav() {
+const Nav = () => {
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
   const [registerEmail, setRegisterEmail] = useState('');
@@ -205,6 +205,6 @@ function Nav() {
       </Dialog>
     </>
   );
-}
+};
 
 export default Nav;

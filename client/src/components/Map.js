@@ -14,13 +14,14 @@ import './Map.scss';
 
 const libraries = ['places'];
 
-function Map() {
+const Map = () => {
   const mapRef = useRef({});
   const center = useMemo(() => ({ lat: 63.50, lng: 17.34 }), []);
   const [parks, setParks] = useState([]);
   const [points, setPoints] = useState([]);
   const [destination, setDestination] = useState('');
   const [selected, setSelected] = useState(null);
+  const [directionsResponse, setdirectionsResponse] = useState(null);
 
   const options = useMemo(() => ({
     mapId: '19283767c2583acc',
@@ -28,7 +29,6 @@ function Map() {
     fullscreenControl: false,
   }), []);
 
-  const [directionsResponse, setdirectionsResponse] = useState(null);
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
@@ -84,15 +84,7 @@ function Map() {
         options={options}
       >
         {directionsResponse && (
-          <DirectionsRenderer
-            directions={directionsResponse}
-          // onDirectionsChanged={() => directionsResponse}
-          // options={{
-          //   draggable: true,
-          //   panel: test,
-          //   suppressMarkers: true
-          // }}
-          />
+          <DirectionsRenderer directions={directionsResponse} />
         )}
         {points.map((point) => (
           <Marker
@@ -135,6 +127,6 @@ function Map() {
   ) : (
     <></>
   );
-}
+};
 
 export default Map;

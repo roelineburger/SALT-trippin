@@ -3,9 +3,9 @@ import Form from './Form';
 import Fuel from './Fuel';
 import './Sidebar.scss';
 
-function Sidebar({
+const Sidebar = ({
   destination, setdirectionsResponse, points, setPoints,
-}) {
+}) => {
   const [distance, setDistance] = useState('');
   const [info, setInfo] = useState(false);
 
@@ -24,6 +24,6 @@ function Sidebar({
       <Fuel distance={distance} info={info} />
     </div>
   );
-}
+};
 
 export default Sidebar;

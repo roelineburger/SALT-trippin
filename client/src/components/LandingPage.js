@@ -1,8 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-// import beach from '../assets/beach.jpg';
-// import van from '../assets/van.jpg';
-// import topo from '../assets/topo.jpg';
 import snow from '../assets/snow.jpg';
 import sandon from '../assets/sandon.jpeg';
 import stenshuvud from '../assets/stenshuvud.jpeg';
@@ -12,7 +9,7 @@ import sonfjallet from '../assets/sonfjallet.jpeg';
 import tresticklan from '../assets/tresticklan.jpeg';
 import './LandingPage.scss';
 
-function LandingPage() {
+const LandingPage = () => {
   const navigate = useNavigate();
 
   const buttonHandler = () => {
@@ -25,9 +22,9 @@ function LandingPage() {
         <article className="landing-page__info">
           <h2 className="landing-page__title">Plan your next roadtrip</h2>
           <p className="landing-page__text">
-            WE ARE ALMOST DONE!!!!!Plan your dream trip and discover amazing stops along your route.
+            Plan your dream trip and discover amazing stops along your route.
           </p>
-          <button className="landing-page__info--button" onClick={() => { buttonHandler(); }}>Go to map</button>
+          <button className="landing-page__info--button" onClick={buttonHandler}>Go to map</button>
         </article>
         <article className="landing-page__info">
           <h1
@@ -105,6 +102,6 @@ function LandingPage() {
       </section>
     </main>
   );
-}
+};
 
 export default LandingPage;

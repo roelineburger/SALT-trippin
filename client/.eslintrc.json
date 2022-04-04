@@ -25,6 +25,7 @@
         "react/button-has-type": 0,
         "react/jsx-no-useless-fragment": 0,
         "no-shadow": 0,
-        "no-console": 0
+        "no-console": 0,
+        "react/function-component-definition": 0
     }
 }
