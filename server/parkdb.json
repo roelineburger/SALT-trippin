@@ -7,7 +7,8 @@
         "lat": 68.31,
         "lng": 18.68
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
     },
     {
       "name": "Björnlandet National Park",
@@ -16,7 +17,8 @@
         "lat": 63.97,
         "lng": 18.04
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.sverigesnationalparker.se/globalassets/bjornlandet/textsida-topp-945x500/bjornlandet-nationalpark-flygfoto-angsjon.jpg"
     },
     {
       "name": "Blå Jungfrun National Park",
@@ -25,7 +27,8 @@
         "lat": 57.25242064811306,
         "lng": 16.792718004385737
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/bla-jungrun/karusell-3000x1875/bla-jungfrun-nationalpark-flygbild.jpg"
     },
     {
       "name": "Dalby Söderskog National Park",
@@ -34,7 +37,8 @@
         "lat": 55.676296,
         "lng": 13.330378
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/dalby-soderskog/karusell-3000x1875/dalby-soderskog-nationalpark-vitsippor-low.jpg"
     },
     {
       "name": "Djurö National Park",
@@ -43,7 +47,8 @@
         "lat": 58.86,
         "lng": 13.46
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/djuro/karusell-3000x1875/djuro-nationalpark-strandparti.jpg"
     },
     {
       "name": "Fulufjället National Park",
@@ -52,7 +57,8 @@
         "lat": 61.54,
         "lng": 12.75
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/fulufjallet/karusell-3000x1875/fulufjallet-nationalpark-njupeskar-dimma.jpg"
     },
     {
       "name": "Färnebofjärden National Park",
@@ -61,7 +67,8 @@
         "lat": 60.22659753454934,
         "lng": 16.798282315577154
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/farnebofjarden/karusell-3000x1875/farnebofjarden-nationalpark-fjard.jpg"
     },
     {
       "name": "Garphyttan National Park",
@@ -70,7 +77,8 @@
         "lat": 59.27948058222777,
         "lng": 14.883362760988511
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/garphyttan/karusell-3000x1875/garphyttan-nationalpark-hage.jpg"
     },
     {
       "name": "Gotska Sandön National Park",
@@ -79,7 +87,8 @@
         "lat": 58.36696556517433,
         "lng": 19.243882170903145
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/gotska-sandon/karusell-3000x1875/gotska-sandon-sanddyner.jpg"
     },
     {
       "name": "Hamra National Park",
@@ -88,7 +97,8 @@
         "lat": 61.76318718138302,
         "lng": 14.756621987581862
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/hamra/karusell-3000x1875/hamra-nationalpark-naturskog.jpg"
     },
     {
       "name": "Haparanda Skärgård National Park",
@@ -97,7 +107,8 @@
         "lat": 65.5773615241941,
         "lng": 23.74821672774236
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/haparanda-skargard/karusell-3000x1875/haparanda-skargard-strand.jpg"
     },
     {
       "name": "Kosterhavets National Park",
@@ -106,7 +117,8 @@
         "lat": 58.83817785505301,
         "lng": 11.033997180993785
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/kosterhavet/karusell-3000x1875/kosterhavet-nationalpark-ursholmen.jpg"
     },
     {
       "name": "Muddus/Muottos National Park",
@@ -115,7 +127,8 @@
         "lat": 66.92864214591357,
         "lng": 20.219174702648694
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/muttos/karusell-3000x1875/muddus-muttos-nationalpark-spang.jpg"
     },
     {
       "name": "Norra Kvill National Park",
@@ -124,7 +137,8 @@
         "lat": 57.7630170915994,
         "lng": 15.593877567735197
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/norra-kvill/karusell-3000x1875/norra-kvill-nationalpark-tallskog.jpg"
     },
     {
       "name": "Padjelanta/ Badjelánnda National",
@@ -133,7 +147,8 @@
         "lat": 67.45016393839184,
         "lng": 16.94987113812627
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img":"https://www.nationalparksofsweden.se/globalassets/padjelanta/karusell-3000x1875/padjelanta-nationalpark-kyrkkata.jpg"
     },
     {
       "name": "Pieljekaise National Park",
@@ -142,7 +157,8 @@
         "lat": 66.3505790959157,
         "lng": 16.74275878544594
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/pieljekaise/karusell-3000x1875/pieljekaise-nationalpark-landskapsvy.jpg"
     },
     {
       "name": "Sarek National Park",
@@ -151,7 +167,8 @@
         "lat": 67.28,
         "lng": 17.70
       },
-      "icon": "national.svg"
+      "icon": "national.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/sarek/karusell-3000x1875/sarek-nationalpark-guohpervagge.jpg"
     },
     {
       "name": "Skuleskogens National Park",
@@ -160,7 +177,8 @@
         "lat": 63.11999498254023,
         "lng": 18.493830022256432
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/skuleskogen/karusell-3000x1875/skuleskogen-nationalpark-kust-vandrare.jpg"
     },
     {
       "name": "Sonfjället National Park",
@@ -169,7 +187,8 @@
         "lat": 62.300034893272745,
         "lng": 13.583333298774361
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/sonfjallet/karusell-3000x1875/sonfjallet-nationalpark-sonfjallet.jpg"
     },
     {
       "name": "Stenshuvud National Park",
@@ -178,7 +197,8 @@
         "lat": 55.65634889337625,
         "lng": 14.26870752380453
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/stenshuvud/karusell-3000x1875/stenshuvud-nationalpark-stranden.jpg"
     },
     {
       "name": "Stora Sjöfallet National Park",
@@ -187,7 +207,8 @@
         "lat": 67.56023160395537,
         "lng": 18.03773962967538
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/stuor-muorkke/karusell-3000x1875/stora-sjofallet-nationalpark-landskap.jpg"
     },
     {
       "name": "Store Mosse National Park",
@@ -196,7 +217,8 @@
         "lat": 57.300032957878926,
         "lng": 13.92985288508819
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/store-mosse/karusell-3000x1875/store-mosse-nationalpark-morgondimma.jpg"
     },
     {
       "name": "Söderåsen National Park",
@@ -205,7 +227,8 @@
         "lat": 56.03867299736218,
         "lng": 13.251290224613928
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/soderasen/karusell-3000x1875/soderasen-nationalpark-kopparhatten-soluppgang.jpg"
     },
     {
       "name": "Tiveden National Park",
@@ -214,7 +237,8 @@
         "lat": 58.71713146583187,
         "lng": 14.606502798634427
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/tiveden/karusell-3000x1875/tiveden-nationalpark-sjo.jpg"
     },
     {
       "name": "Tresticklan National Park",
@@ -223,7 +247,8 @@
         "lat": 59.043924500267885,
         "lng": 11.795091213990618
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/tresticklan/karusell-3000x1875/tresticklan-nationalpark-sjo.jpg"
     },
     {
       "name": "Tyresta National Park",
@@ -232,7 +257,8 @@
         "lat": 59.18,
         "lng": 18.28
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/tyresta/karusell-3000x1875/tyresta-nationalpark-urskog.jpg"
     },
     {
       "name": "Töfsingdalens National Park",
@@ -241,7 +267,8 @@
         "lat": 62.167032384492494,
         "lng": 12.450465156440893
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/tofsingdalen/karusell-3000x1875/tofsingdalen-nationalpark-block.jpg"
     },
     {
       "name": "Vadvetjåkka National Park",
@@ -250,7 +277,8 @@
         "lat": 68.53989611094642,
         "lng": 18.43446775484941
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/vadvetjakka/karusell-3000x1875/vadvetjakka-nationalpark-delta.jpg"
     },
     {
       "name": "Åsnen National Park",
@@ -259,7 +287,8 @@
         "lat": 56.63995295996662,
         "lng": 14.668796121620892
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/asnen/karusell-3000x1875/asnen-nationalpark-ovarld.jpg"
     },
     {
       "name": "Ängsö National Park",
@@ -268,7 +297,8 @@
         "lat": 59.617327387185256,
         "lng": 18.760817327505027
       },
-      "iconUrl": "/logos/national"
+      "iconUrl": "/logos/national",
+      "img": "https://www.nationalparksofsweden.se/globalassets/angso/karusell-3000x1875/angso-nationalpark-orkideer.jpg"
     }
   ]
 }

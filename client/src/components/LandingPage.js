@@ -25,10 +25,7 @@ function LandingPage() {
         <article className="landing-page__info">
           <h2 className="landing-page__title">Plan your next roadtrip</h2>
           <p className="landing-page__text">
-            Ut officia qui exercitation quis ut Lorem aliqua id.
-            Ex ea labore in aute.
-            Ut in fugiat veniam ipsum laboris commodo enim.
-            Deserunt sint nostrud anim sunt laborum pariatur reprehenderit eu laborum.
+            Plan your dream trip and discover amazing stops along your route.
           </p>
           <button className="landing-page__info--button" onClick={() => { buttonHandler(); }}>Go to map</button>
         </article>
