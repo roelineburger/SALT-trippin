@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
 import parksRouter from './routes/parks.js';
 import fuelRouter from './routes/fuel.js';
 import logosRouter from './routes/logos.js';
@@ -10,14 +11,17 @@ const app = express();
 
 app.use(cors());
 
-// Express only serves static assets in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-}
-
 app.use('/fuel', fuelRouter);
 app.use('/parks', parksRouter);
 app.use('/logos', logosRouter);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+
+  app.get('*', (_, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
