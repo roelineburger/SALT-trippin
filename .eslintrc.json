@@ -3,6 +3,7 @@
         "es2021": true,
         "node": true
     },
+    "root": true,
     "extends": [
         "airbnb-base"
     ],
@@ -11,6 +12,7 @@
         "sourceType": "module"
     },
     "rules": {
-        "import/extensions": 0
+        "import/extensions": 0,
+        "no-underscore-dangle": 0
     }
 }

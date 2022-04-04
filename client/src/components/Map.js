@@ -28,7 +28,7 @@ function Map() {
     fullscreenControl: false,
   }), []);
 
-  const [directionsResponse, setdirectionsResponse] = useState(null || JSON.parse(localStorage.getItem('route')));
+  const [directionsResponse, setdirectionsResponse] = useState(null);
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
@@ -47,10 +47,6 @@ function Map() {
   const onLoad = useCallback((map) => {
     mapRef.current = map;
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem('route', JSON.stringify(directionsResponse));
-  }, [directionsResponse]);
 
   const onMapClick = async (waypoint) => {
     if (directionsResponse) {
