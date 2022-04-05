@@ -1,0 +1,40 @@
+.trips-list {
+  list-style: none;
+  
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 250px;
+    margin: 0.4em 0;
+  }
+
+  &__name {
+    overflow: hidden;
+    flex: 1;
+    text-overflow: ellipsis;
+    font-size:small;
+    width: 170px;
+  }
+
+  &__btn {
+    margin-left: .5em;
+    background: none;
+    border: none;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 18px;
+
+    &:hover {
+      opacity: 0.6;
+     }
+
+    &--show {
+
+    }
+
+    &--remove {
+
+    }
+  }
+}

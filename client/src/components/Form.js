@@ -1,26 +1,19 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { Autocomplete } from '@react-google-maps/api';
 import './Form.scss';
 import xBtn from '../assets/x.svg';
 import plusBtn from '../assets/+.svg';
 
 const Form = ({
-  setdirectionsResponse,
-  user,
   points,
   setPoints,
   destination,
-  distance,
-  setDistance,
-  info,
-  setInfo,
-  loggedIn,
+  getTrip,
 }) => {
   const originRef = useRef();
   const waypointRef = useRef();
   const destinationRef = useRef();
-  const [duration, setDuration] = useState('');
-  const [trip, setTrip] = useState({});
+
   let waypoints = [];
 
   points.map((point) => waypoints
@@ -50,14 +43,7 @@ const Form = ({
       optimizeWaypoints: true,
     };
 
-    const directionService = new window.google.maps.DirectionsService();
-    const results = await directionService.route(routeObj);
-
-    setTrip(routeObj);
-    setdirectionsResponse(results);
-    setDistance(results.routes[0].legs[0].distance.text);
-    setDuration(results.routes[0].legs[0].duration.text);
-    setInfo(true);
+    getTrip(routeObj);
   };
 
   const addWaypointInput = (e) => {
@@ -75,24 +61,6 @@ const Form = ({
   const removeOneWaypoint = (e, id) => {
     e.preventDefault();
     setPoints(points.filter((marker) => id !== marker.lat));
-  };
-
-  const saveTrip = () => {
-    const body = {
-      user: user.email,
-      route: {
-        trip,
-      },
-    };
-
-    fetch('http://localhost:8080/db', {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
   };
 
   return (
@@ -113,12 +81,14 @@ const Form = ({
         >
           <img src={plusBtn} alt="plus" />
         </button>
-        {points.map((point) => (
-          <section className="marker-container" key={point.lat}>
-            <p className="marker-container__name">{point.name}</p>
-            <button className="marker-container__btn" onClick={(e) => removeOneWaypoint(e, point.lat)}><img src={xBtn} alt="X" /></button>
-          </section>
-        ))}
+        <section className="marker-container">
+          {points.map((point) => (
+            <section className="marker-container__row" key={point.lat}>
+              <p className="marker-container__row--name">{point.name}</p>
+              <button className="marker-container__row--btn" onClick={(e) => removeOneWaypoint(e, point.lat)}><img src={xBtn} alt="X" /></button>
+            </section>
+          ))}
+        </section>
         <Autocomplete>
           <input
             id="waypoint-field"
@@ -145,27 +115,6 @@ const Form = ({
       </form>
       {waypoints.length > 0 && (
         <button className="form-container__button" onClick={clearWaypoints}>CLEAR MARKERS</button>
-      )}
-      {info && (
-        <section className="form-routeinfo">
-          <p>
-            Distance:
-            {distance}
-          </p>
-          <p>
-            Duration:
-            {duration}
-          </p>
-        </section>
-      )}
-      {loggedIn && info && (
-      <button
-        id="save-button"
-        className="form-container__button"
-        onClick={saveTrip}
-      >
-        SAVE
-      </button>
       )}
     </div>
   );

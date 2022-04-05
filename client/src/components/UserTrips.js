@@ -1,45 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import './UserTrips.scss';
 
-const UserTrips = ({ user, setdirectionsResponse }) => {
-  const [userRoutes, setUserRoutes] = useState([]);
-
-  const getRoutes = async (email) => {
-    const body = {
-      user: email,
-    };
-
-    const result = await fetch('http://localhost:8080/db/user', {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
-    const data = await result.json();
-    console.log(data);
-    setUserRoutes(data);
-  };
-
+const UserTrips = ({
+  user, getTrip, getRoutes, userRoutes,
+}) => {
   useEffect(() => {
     getRoutes(user.email);
   }, []);
 
-  const getRoute = async (obj) => {
-    const directionService = new window.google.maps.DirectionsService();
-    const results = await directionService.route(obj);
-    setdirectionsResponse(results);
-    const distance = results.routes[0].legs[0].distance.text;
-    console.log('distance:', distance);
-  };
-
-  const deleteRoute = (id) => {
+  const deleteRoute = async (id) => {
     const body = {
       user: user.email,
       routeId: id,
     };
 
-    fetch('http://localhost:8080/db/route', {
+    await fetch('http://localhost:8080/db/route', {
       method: 'DELETE',
       body: JSON.stringify(body),
       headers: {
@@ -47,24 +22,26 @@ const UserTrips = ({ user, setdirectionsResponse }) => {
         Accept: 'application/json',
       },
     });
+
+    getRoutes(user.email);
   };
 
   return (
-    <ul>
+    <ul className="trips-list">
       {userRoutes && (
         userRoutes.map((item) => (
-          <div key={item.routeId}>
-            <li>
+          <div className="trips-list__row" key={item.routeId}>
+            <li className="trips-list__name">
               {item.route.origin}
               {' '}
               to
               {' '}
               {item.route.destination}
             </li>
-            <button onClick={() => getRoute(item.route)}>
+            <button className="trips-list__btn--show" onClick={() => getTrip(item.route)}>
               SHOW
             </button>
-            <button onClick={() => deleteRoute(item.routeId)}>
+            <button className="trips-list__btn--remove" onClick={() => deleteRoute(item.routeId)}>
               DELETE
             </button>
           </div>
