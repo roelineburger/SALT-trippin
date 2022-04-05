@@ -88,7 +88,8 @@ const Nav = () => {
   return (
     <>
       <nav className="nav-container">
-        <img src={Logo} alt="logo" className="nav-container__logo" />
+        <Link className="nav-container__link" to="/"><img src={Logo} alt="logo" className="nav-container__logo" /></Link>
+
         <ul className="nav-container__list">
           <li className="nav-container__item">
             <Link className="nav-container__link" to="/">HOME</Link>

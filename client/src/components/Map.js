@@ -1,5 +1,9 @@
 import React, {
-  useCallback, useState, useMemo, useRef, useEffect,
+  useCallback,
+  useState,
+  useMemo,
+  useRef,
+  useEffect,
 } from 'react';
 import {
   GoogleMap,
@@ -9,25 +13,34 @@ import {
   InfoWindow,
 } from '@react-google-maps/api';
 import ParkLogo from '../assets/national.svg';
+import CampLogo from '../assets/camping.svg';
+import ViewpointLogo from '../assets/viewpoint.svg';
 import Sidebar from './Sidebar';
+import Filter from './Filter';
 import './Map.scss';
 
 const libraries = ['places'];
 
 const Map = () => {
   const mapRef = useRef({});
-  const center = useMemo(() => ({ lat: 63.50, lng: 17.34 }), []);
+  const center = useMemo(() => ({ lat: 63.5, lng: 17.34 }), []);
   const [parks, setParks] = useState([]);
+  const [campGrounds, setCampGrounds] = useState([]);
+  const [viewpoints, setViewpoints] = useState([]);
   const [points, setPoints] = useState([]);
   const [destination, setDestination] = useState('');
   const [selected, setSelected] = useState(null);
   const [directionsResponse, setdirectionsResponse] = useState(null);
+  const [isFiltered, setIsFiltered] = useState(false);
 
-  const options = useMemo(() => ({
-    mapId: '19283767c2583acc',
-    mapTypeControl: false,
-    fullscreenControl: false,
-  }), []);
+  const options = useMemo(
+    () => ({
+      mapId: '19283767c2583acc',
+      mapTypeControl: false,
+      fullscreenControl: false,
+    }),
+    [],
+  );
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -36,12 +49,25 @@ const Map = () => {
   });
 
   useEffect(() => {
-    const getParks = async () => {
-      const query = await fetch('http://localhost:8080/parks');
-      const json = await query.json();
-      setParks(json.parks);
-    };
-    getParks();
+    if (isFiltered === false) {
+      const getParks = async () => {
+        const query = await fetch('http://localhost:8080/parks');
+        const json = await query.json();
+        setParks(json.parks);
+      };
+      getParks();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isFiltered === false) {
+      const getCampGrounds = async () => {
+        const query = await fetch('http://localhost:8080/camps');
+        const json = await query.json();
+        setCampGrounds(json.camps);
+      };
+      getCampGrounds();
+    }
   }, []);
 
   const onLoad = useCallback((map) => {
@@ -58,11 +84,13 @@ const Map = () => {
         location: waypoint.latLng,
       });
 
-      setPoints((current) => [...current, {
-        lat: Number(lat),
-        lng: Number(lng),
-        name: geocodeResult.results[3].formatted_address,
-      },
+      setPoints((current) => [
+        ...current,
+        {
+          lat: Number(lat),
+          lng: Number(lng),
+          name: geocodeResult.results[3].formatted_address,
+        },
       ]);
     }
   };
@@ -103,6 +131,28 @@ const Map = () => {
             key={park.name}
           />
         ))}
+        {campGrounds.map((camp) => (
+          <Marker
+            onClick={() => {
+              setDestination(camp.route);
+              setSelected(camp);
+            }}
+            position={camp.coords}
+            icon={CampLogo}
+            key={camp.name}
+          />
+        ))}
+        {viewpoints && viewpoints.map((viewpoint) => (
+          <Marker
+            onClick={() => {
+              setDestination(viewpoint.route);
+              setSelected(viewpoint);
+            }}
+            position={viewpoint.coords}
+            icon={ViewpointLogo}
+            key={viewpoint.name}
+          />
+        ))}
         {selected ? (
           <InfoWindow
             position={{ lat: selected.coords.lat, lng: selected.coords.lng }}
@@ -111,9 +161,7 @@ const Map = () => {
             }}
           >
             <div className="info-container">
-              <h3>
-                {selected.name}
-              </h3>
+              <h3>{selected.name}</h3>
               <img
                 className="info-container__img"
                 src={selected.img}
@@ -123,6 +171,13 @@ const Map = () => {
           </InfoWindow>
         ) : null}
       </GoogleMap>
+      <Filter
+        setParks={setParks}
+        setIsFiltered={setIsFiltered}
+        setCampGrounds={setCampGrounds}
+        isFiltered={isFiltered}
+        setViewpoints={setViewpoints}
+      />
     </div>
   ) : (
     <></>

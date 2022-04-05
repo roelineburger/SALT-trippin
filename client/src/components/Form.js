@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { Autocomplete } from '@react-google-maps/api';
+import polyline from 'google-polyline';
 import './Form.scss';
 import xBtn from '../assets/x.svg';
 import plusBtn from '../assets/+.svg';
@@ -45,6 +46,10 @@ const Form = ({
     setDistance(results.routes[0].legs[0].distance.text);
     setDuration(results.routes[0].legs[0].duration.text);
     setInfo(true);
+    console.log('the route ', results);
+    const decodedResult = polyline.decode( results.routes[0].overview_polyline )
+
+    console.log('the polyline ', decodedResult);
   };
 
   const addWaypointInput = (e) => {

@@ -1,0 +1,54 @@
+{
+  "camps": [
+    {
+      "name": "Mötesplats Borstahusen",
+      "route": "Mötesplats Borstahusen",
+      "coords": {
+        "lat": 56.003,
+        "lng": 12.805
+      },
+      "icon": "camping.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Böda Sand",
+      "route": "Böda Sand",
+      "coords": {
+        "lat": 57.314,
+        "lng": 17.034
+      },
+      "icon": "camping.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Sonjas Camping",
+      "route": "Sonjas Camping",
+      "coords": {
+        "lat": 57.188,
+        "lng": 17.037
+      },
+      "icon": "camping.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Kneippbyn Resort",
+      "route": "Kneippbyn Resort",
+      "coords": {
+        "lat": 57.61,
+        "lng": 18.245
+      },
+      "icon": "camping.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Apelvikens Camping",
+      "route": "Apelvikens Camping",
+      "coords": {
+        "lat": 57.218,
+        "lng": 12.285
+      },
+      "icon": "camping.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    }
+  ]
+}

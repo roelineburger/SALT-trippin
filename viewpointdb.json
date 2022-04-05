@@ -1,0 +1,164 @@
+{
+  "viewpoint": [
+    {
+      "name": "Riddarholmen",
+      "route": "Riddarholmen",
+      "coords": {
+        "lat": 59.325,
+        "lng": 18.063
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "View from Fotografiska",
+      "route": "View from Fotografiska",
+      "coords": {
+        "lat": 59.317,
+        "lng": 18.085
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Montelius Vägen",
+      "route": "Montelius Vägen",
+      "coords": {
+        "lat": 59.320,
+        "lng": 18.060
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Gamla Lundagatan",
+      "route": "Gamla Lundagatan",
+      "coords": {
+        "lat": 59.319,
+        "lng": 18.053
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Mariaberget",
+      "route": "Mariaberget",
+      "coords": {
+        "lat": 59.320,
+        "lng": 18.062
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Katarina Hissen",
+      "route": "Katarina Hissen",
+      "coords": {
+        "lat": 59.319,
+        "lng": 18.073
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Alvsborg Bridge",
+      "route": "Alvsborg Bridge",
+      "coords": {
+        "lat": 57.691,
+        "lng": 11.901
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Views from Stadshuset",
+      "route": "Views from Stadshuset",
+      "coords": {
+        "lat": 59.359,
+        "lng": 18.036
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Sauna Abisko",
+      "route": "Sauna Abisko",
+      "coords": {
+        "lat": 68.318,
+        "lng": 18.684
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Uppsala park",
+      "route": "Uppsala park",
+      "coords": {
+        "lat": 59.852,
+        "lng": 17.642
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Alvsborg Bridge",
+      "route": "Alvsborg Bridge",
+      "coords": {
+        "lat": 57.317,
+        "lng": 18.095
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Views from Puerto Tegelvikshamnen Stadsgården",
+      "route": "Views from Puerto Tegelvikshamnen Stadsgården",
+      "coords": {
+        "lat": 59.359,
+        "lng": 18.036
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Gamla Uppsala",
+      "route": "Gamla Uppsala",
+      "coords": {
+        "lat": 59.854,
+        "lng": 17.63
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Kaknäs Tower",
+      "route": "Kaknäs Tower",
+      "coords": {
+        "lat": 59.335,
+        "lng": 18.126
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Skinnarviksberget",
+      "route": "Skinnarviksberget",
+      "coords": {
+        "lat": 59.320,
+        "lng": 18.050
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    },
+    {
+      "name": "Panorama de Sigtuna",
+      "route": "Panorama de Sigtuna",
+      "coords": {
+        "lat": 59.615,
+        "lng": 17.718
+      },
+      "icon": "viewpoint.svg",
+      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+    }
+  ]
+}
