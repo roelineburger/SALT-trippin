@@ -17,6 +17,7 @@ import CampLogo from '../assets/camping.svg';
 import ViewpointLogo from '../assets/viewpoint.svg';
 import Sidebar from './Sidebar';
 import Filter from './Filter';
+import { get } from '../modules/httpClient';
 import './Map.scss';
 
 const libraries = ['places'];
@@ -51,9 +52,8 @@ const Map = ({ user, loggedIn }) => {
   useEffect(() => {
     if (isFiltered === false) {
       const getParks = async () => {
-        const query = await fetch('http://localhost:8080/parks');
-        const json = await query.json();
-        setParks(json.parks);
+        const data = await get('/parks');
+        setParks(data.parks);
       };
       getParks();
     }
@@ -62,9 +62,8 @@ const Map = ({ user, loggedIn }) => {
   useEffect(() => {
     if (isFiltered === false) {
       const getCampGrounds = async () => {
-        const query = await fetch('http://localhost:8080/camps');
-        const json = await query.json();
-        setCampGrounds(json.camps);
+        const data = await get('/camps');
+        setCampGrounds(data.camps);
       };
       getCampGrounds();
     }

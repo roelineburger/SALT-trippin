@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { stringToNumber, mileagePrice } from '../modules/utils';
+import { get } from '../modules/httpClient';
 import './TripInfo.scss';
-
-const stringToNumber = (string) => {
-  const almostNotString = string.replace(/\D/g, '');
-  return Number(almostNotString);
-};
 
 const Fuel = ({
   distance, duration, saveTrip, loggedIn,
@@ -13,19 +10,13 @@ const Fuel = ({
   const [dieselPrice, setDieselPrice] = useState(0);
   const [cost, setCost] = useState(false);
 
-  const mileagePrice = (km, price) => {
-    const math = (km / 100) * 5.8 * price;
-    return parseFloat(math).toFixed(2);
-  };
-
   const getFuelPrice = async () => {
-    const query = await fetch('http://localhost:8080/fuel');
-    const json = await query.json();
+    const data = await get('/fuel');
     const petrol = mileagePrice(
       stringToNumber(distance),
-      parseFloat(json.petrol),
+      parseFloat(data.petrol),
     );
-    const diesel = mileagePrice(stringToNumber(distance), parseFloat(json.diesel));
+    const diesel = mileagePrice(stringToNumber(distance), parseFloat(data.diesel));
 
     setDieselPrice(diesel);
     setPetrolPrice(petrol);

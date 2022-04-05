@@ -3,6 +3,7 @@ import Form from './Form';
 import TripInfo from './TripInfo';
 import './Sidebar.scss';
 import UserTrips from './UserTrips';
+import { post } from '../modules/httpClient';
 
 const Sidebar = ({
   destination, setdirectionsResponse, points, setPoints, user, loggedIn,
@@ -25,39 +26,12 @@ const Sidebar = ({
   };
 
   const getRoutes = async (email) => {
-    const body = {
-      user: email,
-    };
-
-    const result = await fetch('http://localhost:8080/db/user', {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
-    const data = await result.json();
+    const data = await post('/db/user', { user: email });
     setUserRoutes(data);
   };
 
   const saveTrip = async () => {
-    const body = {
-      user: user.email,
-      route: {
-        trip,
-      },
-    };
-
-    await fetch('http://localhost:8080/db', {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
-
+    await post('/db', { user: user.email, route: { trip } });
     getRoutes(user.email);
   };
 
