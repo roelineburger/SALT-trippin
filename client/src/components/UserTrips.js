@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { del } from '../modules/httpClient';
 import './UserTrips.scss';
 
 const UserTrips = ({
@@ -9,20 +10,7 @@ const UserTrips = ({
   }, []);
 
   const deleteRoute = async (id) => {
-    const body = {
-      user: user.email,
-      routeId: id,
-    };
-
-    await fetch('http://localhost:8080/db/route', {
-      method: 'DELETE',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
-
+    await del('/db/route', { user: user.email, routeId: id });
     getRoutes(user.email);
   };
 
