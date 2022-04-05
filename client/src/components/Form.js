@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { Autocomplete } from '@react-google-maps/api';
 import './Form.scss';
 import xBtn from '../assets/x.svg';
+import plusBtn from '../assets/+.svg';
 
 const Form = ({
   setdirectionsResponse, points, setPoints, destination, distance, setDistance, info, setInfo,
@@ -79,7 +80,7 @@ const Form = ({
           className="form-container__waypoint-button"
           onClick={addWaypointInput}
         >
-          +
+          <img src={plusBtn} alt="plus" />
         </button>
         {points.map((point) => (
           <section className="marker-container" key={point.lat}>
