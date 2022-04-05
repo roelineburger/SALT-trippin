@@ -5,12 +5,22 @@ import xBtn from '../assets/x.svg';
 import plusBtn from '../assets/+.svg';
 
 const Form = ({
-  setdirectionsResponse, points, setPoints, destination, distance, setDistance, info, setInfo,
+  setdirectionsResponse,
+  user,
+  points,
+  setPoints,
+  destination,
+  distance,
+  setDistance,
+  info,
+  setInfo,
+  loggedIn,
 }) => {
   const originRef = useRef();
   const waypointRef = useRef();
   const destinationRef = useRef();
   const [duration, setDuration] = useState('');
+  const [trip, setTrip] = useState({});
   let waypoints = [];
 
   points.map((point) => waypoints
@@ -32,15 +42,18 @@ const Form = ({
       });
     }
 
-    const directionService = new window.google.maps.DirectionsService();
-    const results = await directionService.route({
+    const routeObj = {
       origin: originRef.current.value,
       destination: destinationRef.current.value || destination,
       waypoints,
       travelMode: 'DRIVING',
       optimizeWaypoints: true,
-    });
+    };
 
+    const directionService = new window.google.maps.DirectionsService();
+    const results = await directionService.route(routeObj);
+
+    setTrip(routeObj);
     setdirectionsResponse(results);
     setDistance(results.routes[0].legs[0].distance.text);
     setDuration(results.routes[0].legs[0].duration.text);
@@ -62,6 +75,24 @@ const Form = ({
   const removeOneWaypoint = (e, id) => {
     e.preventDefault();
     setPoints(points.filter((marker) => id !== marker.lat));
+  };
+
+  const saveTrip = () => {
+    const body = {
+      user: user.email,
+      route: {
+        trip,
+      },
+    };
+
+    fetch('http://localhost:8080/db', {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    });
   };
 
   return (
@@ -126,6 +157,15 @@ const Form = ({
             {duration}
           </p>
         </section>
+      )}
+      {loggedIn && info && (
+      <button
+        id="save-button"
+        className="form-container__button"
+        onClick={saveTrip}
+      >
+        SAVE
+      </button>
       )}
     </div>
   );
