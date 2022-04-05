@@ -1,0 +1,26 @@
+@use '../base';
+
+.filter-container {
+  position: absolute;
+  bottom: 3rem;
+  left: 1rem;
+  border-radius: 5px;
+  padding: 0.5em;
+  background-color: white;
+  display: flex;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  
+  &__btn {
+      background-color: white;
+      border: none;
+      opacity: 0.8;
+ align-items: baseline;
+
+      &:hover {
+        opacity: 1;
+       
+      }
+      
+  }
+}
