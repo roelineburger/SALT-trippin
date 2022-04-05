@@ -9,8 +9,8 @@ const UserTrips = ({
     getRoutes(user.email);
   }, []);
 
-  const deleteRoute = async (id) => {
-    await del('/db/route', { user: user.email, routeId: id });
+  const deleteRoute = (id) => {
+    del('/db/route', { user: user.email, routeId: id });
     getRoutes(user.email);
   };
 

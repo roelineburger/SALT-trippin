@@ -21,8 +21,8 @@ const post = async (path, body) => {
   return json;
 };
 
-const del = async (path, body) => {
-  const query = await fetch(`${baseUrl}${path}`, {
+const del = (path, body) => {
+  fetch(`${baseUrl}${path}`, {
     method: 'DELETE',
     body: JSON.stringify(body),
     headers: {
@@ -30,8 +30,6 @@ const del = async (path, body) => {
       Accept: 'application/json',
     },
   });
-  const json = await query.json();
-  return json;
 };
 
 export {
