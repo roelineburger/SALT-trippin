@@ -9,7 +9,7 @@ import Nav from './components/Nav';
 const App = () => {
   const [user, setUser] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
-
+  
   return (
     <div className="App">
       <Nav
