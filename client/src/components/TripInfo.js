@@ -62,7 +62,7 @@ const Fuel = ({
             <p className="form-routeinfo__text">
               {shortDur}
               {' '}
-              mi
+              h
             </p>
           </section>
         </section>
