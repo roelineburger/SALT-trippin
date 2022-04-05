@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import './Fuel.scss';
+import React, { useState, useEffect } from 'react';
+import './TripInfo.scss';
 
 const stringToNumber = (string) => {
   const almostNotString = string.replace(/\D/g, '');
   return Number(almostNotString);
 };
 
-const Fuel = ({ distance, info }) => {
+const Fuel = ({
+  distance, duration, saveTrip, loggedIn,
+}) => {
   const [petrolPrice, setPetrolPrice] = useState(0);
   const [dieselPrice, setDieselPrice] = useState(0);
   const [cost, setCost] = useState(false);
@@ -30,11 +32,14 @@ const Fuel = ({ distance, info }) => {
     setCost(true);
   };
 
-  return info ? (
+  useEffect(() => {
+    getFuelPrice();
+  }, [distance]);
+
+  return (
     <>
-      <button onClick={getFuelPrice} className="form-container__button">GET FUEL COST</button>
       {cost && (
-        <section>
+        <section className="form-routeinfo">
           <p>
             Petrol Price:
             {petrolPrice}
@@ -47,10 +52,27 @@ const Fuel = ({ distance, info }) => {
             {' '}
             Kr
           </p>
+          <p>
+            Distance:
+            {distance}
+          </p>
+          <p>
+            Duration:
+            {duration}
+          </p>
         </section>
       )}
+      {loggedIn && (
+        <button
+          id="save-button"
+          className="form-container__button"
+          onClick={saveTrip}
+        >
+          SAVE
+        </button>
+      )}
     </>
-  ) : <></>;
+  );
 };
 
 export default Fuel;

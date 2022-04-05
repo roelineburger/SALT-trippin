@@ -90,39 +90,43 @@
 }
 
 .marker-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 250px;
-  margin: 0.4em 0;
+  overflow-y: scroll;
+  max-height: 6em;
 
-  &__name {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size:small;
-    width: 170px;
-  }
-
-  &__btn {
-    // margin-top: 1em;
-    margin-left: .5em;
-    background: none;
-    border: none;
-    width: 1.5em;
-    height: 1.5em;
-    font-size: 18px;
-
-    &:hover {
-     opacity: 0.6;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 250px;
+    margin: 0.4em 0;
+  
+    &--name {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size:small;
+      width: 170px;
     }
-
-    &:active {
+  
+    &--btn {
+      margin-left: .5em;
       background: none;
-    }
-    
-    &--hidden {
-      display: none;
+      border: none;
+      width: 1.5em;
+      height: 1.5em;
+      font-size: 18px;
+  
+      &:hover {
+       opacity: 0.6;
+      }
+  
+      &:active {
+        background: none;
+      }
+      
+      &--hidden {
+        display: none;
+      }
     }
   }
 }

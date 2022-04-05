@@ -18,16 +18,13 @@ import auth from '../firebase-config';
 import Logo from '../assets/trippin1.svg';
 import userIcon from '../assets/user.svg';
 
-const Nav = () => {
+const Nav = ({ setUser, loggedIn, setLoggedIn }) => {
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
-
-  const [user, setUser] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
 
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
@@ -84,7 +81,6 @@ const Nav = () => {
     setOpenSignUp(false);
   };
 
-  console.log(user);
   return (
     <>
       <nav className="nav-container">

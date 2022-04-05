@@ -21,7 +21,7 @@ import './Map.scss';
 
 const libraries = ['places'];
 
-const Map = () => {
+const Map = ({ user, loggedIn }) => {
   const mapRef = useRef({});
   const center = useMemo(() => ({ lat: 63.5, lng: 17.34 }), []);
   const [parks, setParks] = useState([]);
@@ -102,6 +102,8 @@ const Map = () => {
         setdirectionsResponse={setdirectionsResponse}
         points={points}
         setPoints={setPoints}
+        user={user}
+        loggedIn={loggedIn}
       />
       <GoogleMap
         zoom={5}
