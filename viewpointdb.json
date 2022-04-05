@@ -8,7 +8,7 @@
         "lng": 18.063
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://www.aj-landskap.se/wp-content/uploads/2019/01/AJ-Landskap_Riddarholmen_9.jpg"
     },
     {
       "name": "View from Fotografiska",
@@ -18,7 +18,7 @@
         "lng": 18.085
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://photo620x400.mnstatic.com/1277557f1145b8507c07fec2da0a351e/view-from-fotografiska.jpg"
     },
     {
       "name": "Montelius Vägen",
@@ -28,7 +28,7 @@
         "lng": 18.060
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://media.swedentips.se/monteliusvagen_stockholm_01.jpg"
     },
     {
       "name": "Gamla Lundagatan",
@@ -38,7 +38,7 @@
         "lng": 18.053
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://a4.pbase.com/g2/96/629796/2/149379419.2zWPDR3h.jpg"
     },
     {
       "name": "Mariaberget",
@@ -48,7 +48,7 @@
         "lng": 18.062
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Kvarteret_Lappskon_st%C3%B6rre%2C_2018a.jpg/312px-Kvarteret_Lappskon_st%C3%B6rre%2C_2018a.jpg"
     },
     {
       "name": "Katarina Hissen",
@@ -58,7 +58,7 @@
         "lng": 18.073
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://upload.wikimedia.org/wikipedia/commons/b/be/Katarinahissen-DSC_0124w.jpg"
     },
     {
       "name": "Alvsborg Bridge",
@@ -68,7 +68,7 @@
         "lng": 11.901
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://www.mageba-group.com/hu/data/docs/hu/4024/REFSHEET-Alvsborg-bridge-mainimg.jpg?v=1.1"
     },
     {
       "name": "Views from Stadshuset",
@@ -78,7 +78,7 @@
         "lng": 18.036
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://static.wixstatic.com/media/ded9d8_40975261146c4f6ba56915b16b5734ac~mv2.jpg/v1/fill/w_1000,h_461,al_c,q_90,usm_0.66_1.00_0.01/ded9d8_40975261146c4f6ba56915b16b5734ac~mv2.jpg"
     },
     {
       "name": "Sauna Abisko",
@@ -88,7 +88,7 @@
         "lng": 18.684
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://stfturist-lajka.imgix.net/v1/image/citybreak/7001677?w=683&h=400&fit=full"
     },
     {
       "name": "Uppsala park",
@@ -98,17 +98,7 @@
         "lng": 17.642
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
-    },
-    {
-      "name": "Alvsborg Bridge",
-      "route": "Alvsborg Bridge",
-      "coords": {
-        "lat": 57.317,
-        "lng": 18.095
-      },
-      "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://www.thelocal.com/wp-content/uploads/2016/07/1468399889_P1020199.jpg"
     },
     {
       "name": "Views from Puerto Tegelvikshamnen Stadsgården",
@@ -118,7 +108,7 @@
         "lng": 18.036
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://imgs-akamai.mnstatic.com/e2/c1/e2c138e85c7e844c2763d36ab42eb734.jpg"
     },
     {
       "name": "Gamla Uppsala",
@@ -128,7 +118,7 @@
         "lng": 17.63
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/45/Gamla_uppsala.jpg"
     },
     {
       "name": "Kaknäs Tower",
@@ -138,7 +128,7 @@
         "lng": 18.126
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://media-cdn.sygictraveldata.com/media/1200x630/612664395a40232133447d33247d383135373439353331"
     },
     {
       "name": "Skinnarviksberget",
@@ -148,7 +138,7 @@
         "lng": 18.050
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://www.swedishnomad.com/wp-content/images/2019/05/Skinnarviksberget-i-stockholm.jpg"
     },
     {
       "name": "Panorama de Sigtuna",
@@ -158,7 +148,7 @@
         "lng": 17.718
       },
       "icon": "viewpoint.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://photo620x400.mnstatic.com/b660b3c4cce577aefc4ed4705f1ca240/panorama-de-sigtuna.jpg"
     }
   ]
 }

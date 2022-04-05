@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Autocomplete } from '@react-google-maps/api';
-import polyline from 'google-polyline';
+// import polyline from 'google-polyline';
 import './Form.scss';
 import xBtn from '../assets/x.svg';
 import plusBtn from '../assets/+.svg';
@@ -34,22 +34,24 @@ const Form = ({
     }
 
     const directionService = new window.google.maps.DirectionsService();
+    // const waypoints2 = [];
     const results = await directionService.route({
       origin: originRef.current.value,
       destination: destinationRef.current.value || destination,
       waypoints,
       travelMode: 'DRIVING',
       optimizeWaypoints: true,
+      // waypoints2: polyline.decode(results.routes[0].overview_polyline),
     });
+    // console.log('waypoints', waypoints2);
 
     setdirectionsResponse(results);
     setDistance(results.routes[0].legs[0].distance.text);
     setDuration(results.routes[0].legs[0].duration.text);
     setInfo(true);
     console.log('the route ', results);
-    const decodedResult = polyline.decode( results.routes[0].overview_polyline )
-
-    console.log('the polyline ', decodedResult);
+    // const decodedResult = polyline.decode(results.routes[0].overview_polyline);
+    // console.log('the polyline ', decodedResult);
   };
 
   const addWaypointInput = (e) => {

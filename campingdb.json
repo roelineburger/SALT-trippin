@@ -4,11 +4,11 @@
       "name": "Mötesplats Borstahusen",
       "route": "Mötesplats Borstahusen",
       "coords": {
-        "lat": 56.003,
-        "lng": 12.805
+        "lat": 55.913,
+        "lng": 12.807
       },
       "icon": "camping.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
     },
     {
       "name": "Böda Sand",
@@ -18,7 +18,7 @@
         "lng": 17.034
       },
       "icon": "camping.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
     },
     {
       "name": "Sonjas Camping",
@@ -28,27 +28,137 @@
         "lng": 17.037
       },
       "icon": "camping.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
     },
     {
       "name": "Kneippbyn Resort",
       "route": "Kneippbyn Resort",
       "coords": {
-        "lat": 57.61,
+        "lat": 57.610,
         "lng": 18.245
       },
       "icon": "camping.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
     },
     {
       "name": "Apelvikens Camping",
-      "route": "Apelvikens Camping",
+      "route": "Apelvikens Camping Minigolf, Varberg",
       "coords": {
-        "lat": 57.218,
-        "lng": 12.285
+        "lat": 57.085,
+        "lng": 12.248
       },
       "icon": "camping.svg",
-      "img": "https://www.nationalparksofsweden.se/globalassets/abisko/karusell-3000x1875/abisko-nationalpark-kanyon.jpg"
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
+    },
+    {
+      "name": "Västervik Resort",
+      "route": "Västervik Resort, Lysingsvägen, Västervik",
+      "coords": {
+        "lat": 57.740,
+        "lng": 16.663
+      },
+      "icon": "camping.svg",
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
+    },
+    {
+      "name": "Kronocamping i Lidköping",
+      "route": "Kronocamping i Lidköping, Läckögatan, Lidköping",
+      "coords": {
+        "lat": 58.513,
+        "lng": 13.138
+      },
+      "icon": "camping.svg",
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
+    },
+    {
+      "name": "Ursand Resort & Camping",
+      "route": "Ursand Resort & Camping, Djupedalen",
+      "coords": {
+        "lat": 58.414,
+        "lng": 12.323
+      },
+      "icon": "camping.svg",
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
+    },
+    {
+      "name": "Hafsten Resort",
+      "route": "Hafsten Resort, Hafsten, Uddevalla",
+      "coords": {
+        "lat": 58.314,
+        "lng": 11.723
+      },
+      "icon": "camping.svg",
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
+    },
+    {
+      "name": "Daftö camping",
+      "route": "Daftö camping, Strömstad",
+      "coords": {
+        "lat": 58.904,
+        "lng": 11.200
+      },
+      "icon": "camping.svg",
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
+    },
+    {
+      "name": "Årjäng Camping",
+      "route": "Årjäng Camping & Stugor Sommarvik, Sommarvik Strand, Årjäng",
+      "coords": {
+        "lat": 59.367,
+        "lng": 12.141
+      },
+      "icon": "camping.svg",
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
+    },
+    {
+      "name": "Gustavsvik Campingplats",
+      "route": "Gustavsvik Campingplats & Stugby, Sommarrovägen, Örebro",
+      "coords": {
+        "lat": 59.257,
+        "lng": 15.188
+      },
+      "icon": "camping.svg",
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
+    },
+    {
+      "name": "Leksand Strand Camping & Resort",
+      "route": "Leksand Strand Camping & Resort, Siljansvägen, Leksand",
+      "coords": {
+        "lat": 60.749,
+        "lng": 14.974
+      },
+      "icon": "camping.svg",
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
+    },
+    {
+      "name": "First Camp Orsa",
+      "route": "First Camp Orsa - Dalarna, Bowlingvägen, Orsa",
+      "coords": {
+        "lat": 61.121,
+        "lng": 14.599
+      },
+      "icon": "camping.svg",
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
+    },
+    {
+      "name": "Ansia Badpark",
+      "route": "Ansia Badpark, Sorselevägen, Lycksele",
+      "coords": {
+        "lat": 64.529,
+        "lng": 18.699
+      },
+      "icon": "camping.svg",
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
+    },
+    {
+      "name": "Byske havsbad",
+      "route": "Byske havsbad, Bäckgatan, Byske",
+      "coords": {
+        "lat": 64.948,
+        "lng": 21.235
+      },
+      "icon": "camping.svg",
+      "img": "https://media.timeout.com/images/105658195/image.jpg"
     }
   ]
 }
