@@ -113,7 +113,7 @@ const Nav = () => {
                   <button className="nav-container__item--button" onClick={logout}>SIGN OUT</button>
                 </li>
                 <li className="nav-container__item">
-                  <img src={userIcon} alt="user icon" className="nav-container__userIcon" />
+                  <button className="nav-container__item-userIcon--button"><img src={userIcon} alt="user icon" /></button>
                 </li>
               </>
             )}
