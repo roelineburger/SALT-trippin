@@ -8,7 +8,14 @@ const mileagePrice = (km, price) => {
   return parseFloat(math).toFixed(2);
 };
 
+const shortenString = (string) => {
+  const words = string.replace(/[a-z]/ig, '');
+  const addComma = words.replace(/ /, ',');
+  return addComma;
+};
+
 export {
   stringToNumber,
   mileagePrice,
+  shortenString,
 };

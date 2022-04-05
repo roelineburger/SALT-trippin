@@ -1,11 +1,23 @@
+@use '../base';
+
+.trips {
+  width: 12em;
+
+  &__title {
+    text-align: center;
+    margin-bottom: .5em;
+  }
+}
+
 .trips-list {
-  list-style: none;
+  overflow-y: scroll;
+  max-height: 10em;
+  width: 100%;
   
   &__row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 250px;
     margin: 0.4em 0;
   }
 
@@ -18,23 +30,46 @@
   }
 
   &__btn {
-    margin-left: .5em;
-    background: none;
-    border: none;
-    width: 1.5em;
-    height: 1.5em;
-    font-size: 18px;
-
-    &:hover {
-      opacity: 0.6;
-     }
+    position: absolute;
+    left: 11em;
+    opacity: 0;
 
     &--show {
-
+      background: none;
+      border: none;
+      width: 1.5em;
+      height: 1.5em;
+      font-size: 18px;
+    
+      &--svg:hover {
+       opacity: .6;
+      }
+    
+      &:active {
+        background: none;
+      }
     }
 
     &--remove {
-
+      background: none;
+      border: none;
+      width: 1.5em;
+      height: 1.5em;
+      font-size: 18px;
+    
+      &:hover {
+       opacity: .6;
+      }
+    
+      &:active {
+        background: none;
+      }
     }
   }
 }
+
+.trips-list__row:hover .trips-list__btn {
+  opacity: 1;
+  -webkit-filter: red;
+  filter: red;
+ }

@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { stringToNumber, mileagePrice } from '../modules/utils';
+import { stringToNumber, mileagePrice, shortenString } from '../modules/utils';
 import { get } from '../modules/httpClient';
 import './TripInfo.scss';
+import petrol from '../assets/petrol.svg';
+import diesel from '../assets/diesel.svg';
+import route from '../assets/route.svg';
+import timer from '../assets/timer.svg';
 
 const Fuel = ({
   distance, duration, saveTrip, loggedIn,
@@ -23,6 +27,8 @@ const Fuel = ({
     setCost(true);
   };
 
+  const shortDur = shortenString(duration);
+
   useEffect(() => {
     getFuelPrice();
   }, [distance]);
@@ -31,35 +37,43 @@ const Fuel = ({
     <>
       {cost && (
         <section className="form-routeinfo">
-          <p>
-            Petrol Price:
-            {petrolPrice}
-            {' '}
-            Kr
-          </p>
-          <p>
-            Diesel Price:
-            {dieselPrice}
-            {' '}
-            Kr
-          </p>
-          <p>
-            Distance:
-            {distance}
-          </p>
-          <p>
-            Duration:
-            {duration}
-          </p>
+          <section className="form-routeinfo__petrol">
+            <img className="form-routeinfo__svg" src={petrol} alt="petrol" />
+            <p className="form-routeinfo__text">
+              {petrolPrice}
+              {' '}
+              Kr
+            </p>
+          </section>
+          <section className="form-routeinfo__diesel">
+            <img className="form-routeinfo__svg" src={diesel} alt="diesel" />
+            <p className="form-routeinfo__text">
+              {dieselPrice}
+              {' '}
+              Kr
+            </p>
+          </section>
+          <section className="form-routeinfo__distance">
+            <img className="form-routeinfo__svg" src={route} alt="distance" />
+            <p className="form-routeinfo__text">{distance}</p>
+          </section>
+          <section className="form-routeinfo__duration">
+            <img className="form-routeinfo__svg" src={timer} alt="duration" />
+            <p className="form-routeinfo__text">
+              {shortDur}
+              {' '}
+              mi
+            </p>
+          </section>
         </section>
       )}
       {loggedIn && (
         <button
           id="save-button"
-          className="form-container__button"
+          className="form-routeinfo__button"
           onClick={saveTrip}
         >
-          SAVE
+          SAVE ROUTE
         </button>
       )}
     </>

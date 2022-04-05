@@ -1,0 +1,40 @@
+@use '../base';
+
+.form-routeinfo {
+  display: flex;
+  width: 12.5em;
+  justify-content: space-between;
+
+  &__petrol,
+  &__diesel,
+  &__distance,
+  &__duration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__text {
+    margin-top: .4em;
+    font-size: x-small;
+    font-weight: bold;
+  }
+
+  &__button {
+    margin: 1em;
+    width: 100%;
+    height: 2em;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 1px;
+    border: none;
+    color: white;
+    background-color: base.$button-color;
+    border-radius: 8px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
