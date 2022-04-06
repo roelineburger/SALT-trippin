@@ -18,7 +18,7 @@ const LandingPage = ({ setDestination, setSelected, parks }) => {
 
   return (
     <main className="landing-page">
-      <img className="landing-page__image" src={snow} alt="forest" />
+      <img className="landing-page__image" src={road} alt="forest" />
       <section className="landing-page__header">
         <article className="landing-page__info">
           <h2 className="landing-page__title">Plan your next roadtrip</h2>
