@@ -52,7 +52,8 @@ const Form = ({
     document.getElementById('waypoint-button').classList.toggle('form-container__waypoint-button--hidden');
   };
 
-  const clearWaypoints = () => {
+  const clearWaypoints = (e) => {
+    e.preventDefault();
     waypoints = [];
     setPoints([]);
     waypointRef.current.value = '';
@@ -111,7 +112,7 @@ const Form = ({
             className={waypoints.length > 0
               ? "form-container__button--clear"
               : "form-container__button--clear--hidden"}
-            onClick={clearWaypoints}
+            onClick={(e) => clearWaypoints(e)}
           >
             CLEAR
           </button>
