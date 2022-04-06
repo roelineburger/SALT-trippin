@@ -1,8 +1,8 @@
 import React from 'react';
 import snow from '../assets/snow.jpg';
 import './About.scss';
-import roeline from "../assets/roeline.png";
-import joan from "../assets/joan.png";
+import roeline from '../assets/roeline.png';
+import joan from '../assets/joan.png';
 
 const About = () => (
   <main className="about-page">

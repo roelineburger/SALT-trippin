@@ -9,6 +9,9 @@ import Nav from './components/Nav';
 const App = () => {
   const [user, setUser] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
+  const [destination, setDestination] = useState('');
+  const [selected, setSelected] = useState(null);
+  const [parks, setParks] = useState([]);
 
   return (
     <div className="App">
@@ -18,8 +21,22 @@ const App = () => {
         setLoggedIn={setLoggedIn}
       />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/map" element={<Map user={user} loggedIn={loggedIn} />} />
+        <Route path="/" element={<LandingPage setDestination={setDestination} setSelected={setSelected} parks={parks} />} />
+        <Route
+          path="/map"
+          element={(
+            <Map
+              user={user}
+              loggedIn={loggedIn}
+              destination={destination}
+              setDestination={setDestination}
+              selected={selected}
+              setSelected={setSelected}
+              parks={parks}
+              setParks={setParks}
+            />
+          )}
+        />
         <Route path="/about" element={<About />} />
       </Routes>
     </div>

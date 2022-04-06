@@ -21,15 +21,14 @@ import './Map.scss';
 
 const libraries = ['places'];
 
-const Map = ({ user, loggedIn }) => {
+const Map = ({
+  user, loggedIn, setDestination, destination, selected, setSelected, parks, setParks,
+}) => {
   const mapRef = useRef({});
   const center = useMemo(() => ({ lat: 63.5, lng: 17.34 }), []);
-  const [parks, setParks] = useState([]);
   const [campGrounds, setCampGrounds] = useState([]);
   const [viewpoints, setViewpoints] = useState([]);
   const [points, setPoints] = useState([]);
-  const [destination, setDestination] = useState('');
-  const [selected, setSelected] = useState(null);
   const [directionsResponse, setdirectionsResponse] = useState(null);
   const [isFiltered, setIsFiltered] = useState(false);
 
@@ -163,7 +162,7 @@ const Map = ({ user, loggedIn }) => {
             }}
           >
             <div className="info-container">
-              <h3>{selected.name}</h3>
+              <h4>{selected.name}</h4>
               <img
                 className="info-container__img"
                 src={selected.img}
