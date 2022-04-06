@@ -1,21 +1,21 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-// import snow from '../assets/snow.jpg';
-import road from '../assets/5.png';
-import sandon from '../assets/sandon.jpeg';
-import stenshuvud from '../assets/stenshuvud.jpeg';
-import abisko from '../assets/abisko.jpeg';
-import kosterhavet from '../assets/kosterhavet.jpeg';
-import sonfjallet from '../assets/sonfjallet.jpeg';
-import tresticklan from '../assets/tresticklan.jpeg';
+import snow from '../assets/snow.jpg';
 import './LandingPage.scss';
 
-const LandingPage = () => {
+const LandingPage = ({ setDestination, setSelected, parks }) => {
   const navigate = useNavigate();
 
-  const buttonHandler = () => {
+  const goToMapButton = () => {
     navigate('/map');
   };
+
+  const buttonHandler = (obj) => {
+    navigate('/map');
+    setDestination(obj.route);
+    setSelected(obj);
+  };
+
   return (
     <main className="landing-page">
       <img className="landing-page__image" src={road} alt="forest" />
@@ -25,7 +25,7 @@ const LandingPage = () => {
           <p className="landing-page__text">
             Plan your dream trip and discover amazing stops along your route.
           </p>
-          <button className="landing-page__info--button" onClick={buttonHandler}>Go to map</button>
+          <button className="landing-page__info--button" onClick={goToMapButton}>Go to map</button>
         </article>
         <article className="landing-page__info">
           <h1
@@ -34,54 +34,16 @@ const LandingPage = () => {
             Discover National Parks In Sweden
           </h1>
           <section className="suggestions">
-            <button className="suggestions__wrap" onClick={buttonHandler}>
-              <img
-                className="suggestions__img"
-                src={sandon}
-                alt="pic"
-              />
-              <p className="suggestions__name">Gotska Sandön</p>
-            </button>
-            <button className="suggestions__wrap" onClick={buttonHandler}>
-              <img
-                className="suggestions__img"
-                src={stenshuvud}
-                alt="pic"
-              />
-              <p className="suggestions__name">Stenshuvud</p>
-            </button>
-            <button className="suggestions__wrap" onClick={buttonHandler}>
-              <img
-                className="suggestions__img"
-                src={abisko}
-                alt="pic"
-              />
-              <p className="suggestions__name">Abisko</p>
-            </button>
-            <button className="suggestions__wrap" onClick={buttonHandler}>
-              <img
-                className="suggestions__img"
-                src={kosterhavet}
-                alt="pic"
-              />
-              <p className="suggestions__name">Kosterhavet</p>
-            </button>
-            <button className="suggestions__wrap" onClick={buttonHandler}>
-              <img
-                className="suggestions__img"
-                src={sonfjallet}
-                alt="pic"
-              />
-              <p className="suggestions__name">Sonfjallet</p>
-            </button>
-            <button className="suggestions__wrap" onClick={buttonHandler}>
-              <img
-                className="suggestions__img"
-                src={tresticklan}
-                alt="pic"
-              />
-              <p className="suggestions__name">Tresticklan</p>
-            </button>
+            {parks.map((park) => (
+              <button key={park.name} className="suggestions__wrap" onClick={() => buttonHandler(park)}>
+                <img
+                  className="suggestions__img"
+                  src={park.img}
+                  alt="pic"
+                />
+                <p className="suggestions__name">{park.name}</p>
+              </button>
+            ))}
           </section>
           <button
             className="suggestions__scroll"
