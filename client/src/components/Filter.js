@@ -9,35 +9,24 @@ import { get } from '../modules/httpClient';
 const Filter = ({
   setIsFiltered, setParks, setCampGrounds, isFiltered, setViewpoints,
 }) => {
-  const fetchParks = async () => {
-    const data = await get('/parks');
-    return data;
-  };
-
-  const fetchCampGrounds = async () => {
-    const data = await get('/camps');
-    return data;
-  };
-  const fetchViewpoints = async () => {
-    const data = await get('/viewpoints');
-    return data;
-  };
-
   const getParks = async () => {
-    const theParks = await fetchParks();
+    const theParks = await get('/parks');
     setIsFiltered(true);
     setParks(theParks.parks);
     setCampGrounds([]);
+    setViewpoints([]);
   };
 
   const getCampGrounds = async () => {
-    const theCampGrounds = await fetchCampGrounds();
+    const theCampGrounds = await get('/camps');
     setIsFiltered(true);
     setCampGrounds(theCampGrounds.camps);
     setParks([]);
+    setViewpoints([]);
   };
+
   const getViewpoints = async () => {
-    const theViewpoints = await fetchViewpoints();
+    const theViewpoints = await get('/viewpoints');
     setIsFiltered(true);
     setViewpoints(theViewpoints.viewpoint);
     setCampGrounds([]);
@@ -46,10 +35,11 @@ const Filter = ({
 
   const clearFilters = async () => {
     setIsFiltered(false);
-    const theParks = await fetchParks();
+    const theParks = await get('/parks');
     setParks(theParks.parks);
-    const theCampGrounds = await fetchCampGrounds();
+    const theCampGrounds = await get('/camps');
     setCampGrounds(theCampGrounds.camps);
+    setViewpoints([]);
   };
 
   return (

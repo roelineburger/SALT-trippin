@@ -12,6 +12,7 @@ import {
   Marker,
   InfoWindow,
 } from '@react-google-maps/api';
+import Alert from '@mui/material/Alert';
 import ParkLogo from '../assets/national.svg';
 import CampLogo from '../assets/camping.svg';
 import ViewpointLogo from '../assets/viewpoint.svg';
@@ -32,6 +33,7 @@ const Map = ({
   const [points, setPoints] = useState([]);
   const [directionsResponse, setdirectionsResponse] = useState(null);
   const [isFiltered, setIsFiltered] = useState(false);
+  const [errorAlert, setErrorAlert] = useState(false);
 
   const options = useMemo(
     () => ({
@@ -73,15 +75,15 @@ const Map = ({
   }, []);
 
   const onMapClick = async (waypoint) => {
-    if (directionsResponse) {
-      const lat = parseFloat(waypoint.latLng.lat().toFixed(8));
-      const lng = parseFloat(waypoint.latLng.lng().toFixed(8));
+    if (!directionsResponse) return;
+    const lat = parseFloat(waypoint.latLng.lat().toFixed(8));
+    const lng = parseFloat(waypoint.latLng.lng().toFixed(8));
 
-      const geocoder = new window.google.maps.Geocoder();
-      const geocodeResult = await geocoder.geocode({
-        location: waypoint.latLng,
-      });
-
+    const geocoder = new window.google.maps.Geocoder();
+    const geocodeResult = await geocoder.geocode({
+      location: waypoint.latLng,
+    });
+    if (geocodeResult.results.length > 3) {
       setPoints((current) => [
         ...current,
         {
@@ -93,6 +95,10 @@ const Map = ({
     }
   };
 
+  const removeWarning = () => {
+    setErrorAlert(false);
+  };
+
   return isLoaded ? (
     <div>
       <Sidebar
@@ -102,7 +108,11 @@ const Map = ({
         setPoints={setPoints}
         user={user}
         loggedIn={loggedIn}
+        setErrorAlert={setErrorAlert}
       />
+      {errorAlert ? (
+        <Alert className="warning-alert" onClose={removeWarning} severity="warning">No route found.</Alert>
+      ) : null}
       <GoogleMap
         zoom={5}
         mapContainerStyle={{ width: '100vw', height: '100vh' }}

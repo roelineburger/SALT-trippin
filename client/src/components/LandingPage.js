@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import snow from '../assets/snow.jpg';
+import road from '../assets/5.png';
 import './LandingPage.scss';
+import { get } from '../modules/httpClient';
 
-const LandingPage = ({ setDestination, setSelected, parks }) => {
+const LandingPage = ({
+  setDestination, setSelected, parks, setParks,
+}) => {
   const navigate = useNavigate();
 
   const goToMapButton = () => {
@@ -15,6 +18,14 @@ const LandingPage = ({ setDestination, setSelected, parks }) => {
     setDestination(obj.route);
     setSelected(obj);
   };
+
+  useEffect(() => {
+    const getParks = async () => {
+      const data = await get('/parks');
+      setParks(data.parks);
+    };
+    getParks();
+  }, []);
 
   return (
     <main className="landing-page">

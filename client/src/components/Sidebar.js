@@ -6,7 +6,7 @@ import UserTrips from './UserTrips';
 import { post } from '../modules/httpClient';
 
 const Sidebar = ({
-  destination, setdirectionsResponse, points, setPoints, user, loggedIn,
+  destination, setdirectionsResponse, setErrorAlert, points, setPoints, user, loggedIn,
 }) => {
   const [userRoutes, setUserRoutes] = useState([]);
   const [distance, setDistance] = useState('');
@@ -15,14 +15,19 @@ const Sidebar = ({
   const [trip, setTrip] = useState({});
 
   const getTrip = async (obj) => {
-    const directionService = new window.google.maps.DirectionsService();
-    const results = await directionService.route(obj);
+    try {
+      const directionService = new window.google.maps.DirectionsService();
+      const results = await directionService.route(obj);
 
-    setTrip(obj);
-    setdirectionsResponse(results);
-    setDistance(results.routes[0].legs[0].distance.text);
-    setDuration(results.routes[0].legs[0].duration.text);
-    setInfo(true);
+      setTrip(obj);
+      setdirectionsResponse(results);
+      setDistance(results.routes[0].legs[0].distance.text);
+      setDuration(results.routes[0].legs[0].duration.text);
+      setInfo(true);
+      setErrorAlert(false);
+    } catch (error) {
+      setErrorAlert(true);
+    }
   };
 
   const getRoutes = async (email) => {
@@ -42,6 +47,8 @@ const Sidebar = ({
         setPoints={setPoints}
         getTrip={getTrip}
         destination={destination}
+        setdirectionsResponse={setdirectionsResponse}
+        setInfo={setInfo}
       />
       {info && (
         <TripInfo

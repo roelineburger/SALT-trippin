@@ -1,13 +1,15 @@
 import React from 'react';
-// import snow from '../assets/snow.jpg';
 import road from '../assets/4.png';
 import './About.scss';
 import roeline from "../assets/roeline.png";
 import joan from "../assets/joan.png";
 import alex from "../assets/alex.png";
 import izabela from "../assets/izabela.png";
+import github from '../assets/GitHub.png';
+import linkedin from '../assets/linkedin.svg';
 
 const About = () => (
+
   <main className="about-page">
     <img className="about-page__image" src={road} alt="forest" />
     <section className="about-page__header">
@@ -30,19 +32,28 @@ const About = () => (
         <section className="image-container">
           <div classsName="profile">
             <img className="profile-image" src={izabela} alt="izabela" />
-            <h4>Izabela</h4>
+            <h4 className="profile-name">Izabela</h4>
+            <a href="https://www.linkedin.com/in/izabela-szymczyk-603514114/" target="_blank" rel="noreferrer" className="profile-icons"><img src={linkedin} alt="github" /></a>
+            <a href="https://github.com/SzymczykI" target="_blank" rel="noreferrer" className="profile-icons"><img src={github} alt="github" /></a>
           </div>
           <div classsName="profile">
             <img className="profile-image" src={roeline} alt="roeline" />
-            <h4>Roeline</h4>
+            <h4 className="profile-name">Roeline</h4>
+            <a href="https://www.linkedin.com/in/roeline-burger-781b62100/" target="_blank" rel="noreferrer" className="profile-icons"><img src={linkedin} alt="github" /></a>
+            <a href="https://github.com/roelineburger" target="_blank" rel="noreferrer" className="profile-icons"><img src={github} alt="github" /></a>
           </div>
           <div classsName="profile">
-            <img className="profile-image" src={alex} alt="aleex" />
-            <h4>Alex</h4>
+            {' '}
+            <img className="profile-image" src={alex} alt="alex" />
+            <h4 className="profile-name">Alexander</h4>
+            <a href="https://www.linkedin.com/in/hirdman/" target="_blank" rel="noreferrer" className="profile-icons"><img src={linkedin} alt="github" /></a>
+            <a href="https://github.com/ahirdman" target="_blank" rel="noreferrer" className="profile-icons"><img src={github} alt="github" /></a>
           </div>
           <div classsName="profile">
             <img className="profile-image" src={joan} alt="joan" />
-            <h4>Joan</h4>
+            <h4 className="profile-name">Joan</h4>
+            <a href="https://www.linkedin.com/in/joangerard/" target="_blank" rel="noreferrer" className="profile-icons"><img src={linkedin} alt="github" /></a>
+            <a href="https://github.com/joan-gerard" target="_blank" rel="noreferrer" className="profile-icons"><img src={github} alt="github" /></a>
           </div>
         </section>
       </article>

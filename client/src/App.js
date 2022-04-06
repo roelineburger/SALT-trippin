@@ -12,6 +12,7 @@ const App = () => {
   const [destination, setDestination] = useState('');
   const [selected, setSelected] = useState(null);
   const [parks, setParks] = useState([]);
+
   return (
     <div className="App">
       <Nav
@@ -20,7 +21,7 @@ const App = () => {
         setLoggedIn={setLoggedIn}
       />
       <Routes>
-        <Route path="/" element={<LandingPage setDestination={setDestination} setSelected={setSelected} parks={parks} />} />
+        <Route path="/" element={<LandingPage setDestination={setDestination} setSelected={setSelected} parks={parks} setParks={setParks} />} />
         <Route
           path="/map"
           element={(

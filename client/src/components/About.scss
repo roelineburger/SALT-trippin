@@ -1,16 +1,12 @@
 @use "../base";
 
-* {
-  margin: 0;
-}
-
 .about-page {
   display: flex;
   height: 100vh;
 
   &__image {
     height: 100%;
-    width: 55%;
+    width: 100%;
     object-fit: cover;
   }
 
@@ -58,9 +54,18 @@
   text-align: center;
 }
 
+.profile {
+  &-icons {
+    margin: 0.7em 0.5em;
+  }
 
-.profile-image {
-width: 150px;
-height: 150px;
-padding: 2em;
+  &-name {
+  margin-bottom: 0.5em;
+  }
+
+  &-image {
+  width: 6em;
+  height: 6em;
+  padding: 1em;
+  }
 }

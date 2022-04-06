@@ -9,6 +9,8 @@ const Form = ({
   setPoints,
   destination,
   getTrip,
+  setdirectionsResponse,
+  setInfo,
 }) => {
   const originRef = useRef();
   const waypointRef = useRef();
@@ -52,10 +54,15 @@ const Form = ({
     document.getElementById('waypoint-button').classList.toggle('form-container__waypoint-button--hidden');
   };
 
-  const clearWaypoints = () => {
+  const clearWaypoints = (e) => {
+    e.preventDefault();
     waypoints = [];
     setPoints([]);
     waypointRef.current.value = '';
+    originRef.current.value = '';
+    destinationRef.current.value = '';
+    setInfo(false);
+    setdirectionsResponse(null);
   };
 
   const removeOneWaypoint = (e, id) => {
@@ -108,10 +115,8 @@ const Form = ({
         </Autocomplete>
         <section className="form-container__button">
           <button
-            className={waypoints.length > 0
-              ? "form-container__button--clear"
-              : "form-container__button--clear--hidden"}
-            onClick={clearWaypoints}
+            className="form-container__button--clear"
+            onClick={(e) => clearWaypoints(e)}
           >
             CLEAR
           </button>
