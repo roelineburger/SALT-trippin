@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import snow from '../assets/snow.jpg';
+// import snow from '../assets/snow.jpg';
+import road from '../assets/5.png';
 import sandon from '../assets/sandon.jpeg';
 import stenshuvud from '../assets/stenshuvud.jpeg';
 import abisko from '../assets/abisko.jpeg';
@@ -17,7 +18,7 @@ const LandingPage = () => {
   };
   return (
     <main className="landing-page">
-      <img className="landing-page__image" src={snow} alt="forest" />
+      <img className="landing-page__image" src={road} alt="forest" />
       <section className="landing-page__header">
         <article className="landing-page__info">
           <h2 className="landing-page__title">Plan your next roadtrip</h2>

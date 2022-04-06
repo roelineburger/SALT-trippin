@@ -30,6 +30,7 @@
 
     &:hover {
       text-decoration: underline;
+      color: base.$button-color;
     }
 
     &:active {
@@ -53,7 +54,8 @@
       font-size: 1em;
 
       &:hover {
-        text-decoration: underline;
+      text-decoration: underline;
+      color: base.$button-color;
       }
 
       &:active {
