@@ -5,7 +5,7 @@ const router = express.Router();
 
 const parks = JSON.parse(
   await readFile(
-    new URL('../parkdb.json', import.meta.url),
+    new URL('./markers/parkdb.json', import.meta.url),
   ),
 );
 

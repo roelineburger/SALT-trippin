@@ -4,25 +4,23 @@ import ParkLogo from '../assets/national.svg';
 import CampLogo from '../assets/camping.svg';
 import ViewpointLogo from '../assets/viewpoint.svg';
 import xSvg from '../assets/x.svg';
+import { get } from '../modules/httpClient';
 
 const Filter = ({
   setIsFiltered, setParks, setCampGrounds, isFiltered, setViewpoints,
 }) => {
   const fetchParks = async () => {
-    const query = await fetch('http://localhost:8080/parks');
-    const json = await query.json();
-    return json;
+    const data = await get('/parks');
+    return data;
   };
 
   const fetchCampGrounds = async () => {
-    const query = await fetch('http://localhost:8080/camps');
-    const json = await query.json();
-    return json;
+    const data = await get('/camps');
+    return data;
   };
   const fetchViewpoints = async () => {
-    const query = await fetch('http://localhost:8080/viewpoints');
-    const json = await query.json();
-    return json;
+    const data = await get('/viewpoints');
+    return data;
   };
 
   const getParks = async () => {

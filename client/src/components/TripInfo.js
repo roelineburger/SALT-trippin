@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { stringToNumber, mileagePrice, shortenString } from '../modules/utils';
+import { get } from '../modules/httpClient';
 import './TripInfo.scss';
-
-const stringToNumber = (string) => {
-  const almostNotString = string.replace(/\D/g, '');
-  return Number(almostNotString);
-};
+import petrol from '../assets/petrol.svg';
+import diesel from '../assets/diesel.svg';
+import route from '../assets/route.svg';
+import timer from '../assets/timer.svg';
 
 const Fuel = ({
   distance, duration, saveTrip, loggedIn,
@@ -13,62 +14,67 @@ const Fuel = ({
   const [dieselPrice, setDieselPrice] = useState(0);
   const [cost, setCost] = useState(false);
 
-  const mileagePrice = (km, price) => {
-    const math = (km / 100) * 5.8 * price;
-    return parseFloat(math).toFixed(2);
-  };
-
   const getFuelPrice = async () => {
-    const query = await fetch('http://localhost:8080/fuel');
-    const json = await query.json();
+    const data = await get('/fuel');
     const petrol = mileagePrice(
       stringToNumber(distance),
-      parseFloat(json.petrol),
+      parseFloat(data.petrol),
     );
-    const diesel = mileagePrice(stringToNumber(distance), parseFloat(json.diesel));
+    const diesel = mileagePrice(stringToNumber(distance), parseFloat(data.diesel));
 
     setDieselPrice(diesel);
     setPetrolPrice(petrol);
     setCost(true);
   };
 
+  const shortDur = shortenString(duration);
+
   useEffect(() => {
     getFuelPrice();
+    console.log('fuel effect ran');
   }, [distance]);
 
   return (
     <>
       {cost && (
         <section className="form-routeinfo">
-          <p>
-            Petrol Price:
-            {petrolPrice}
-            {' '}
-            Kr
-          </p>
-          <p>
-            Diesel Price:
-            {dieselPrice}
-            {' '}
-            Kr
-          </p>
-          <p>
-            Distance:
-            {distance}
-          </p>
-          <p>
-            Duration:
-            {duration}
-          </p>
+          <section className="form-routeinfo__petrol">
+            <img className="form-routeinfo__svg" src={petrol} alt="petrol" />
+            <p className="form-routeinfo__text">
+              {petrolPrice}
+              {' '}
+              Kr
+            </p>
+          </section>
+          <section className="form-routeinfo__diesel">
+            <img className="form-routeinfo__svg" src={diesel} alt="diesel" />
+            <p className="form-routeinfo__text">
+              {dieselPrice}
+              {' '}
+              Kr
+            </p>
+          </section>
+          <section className="form-routeinfo__distance">
+            <img className="form-routeinfo__svg" src={route} alt="distance" />
+            <p className="form-routeinfo__text">{distance}</p>
+          </section>
+          <section className="form-routeinfo__duration">
+            <img className="form-routeinfo__svg" src={timer} alt="duration" />
+            <p className="form-routeinfo__text">
+              {shortDur}
+              {' '}
+              h
+            </p>
+          </section>
         </section>
       )}
       {loggedIn && (
         <button
           id="save-button"
-          className="form-container__button"
+          className="form-routeinfo__button"
           onClick={saveTrip}
         >
-          SAVE
+          SAVE ROUTE
         </button>
       )}
     </>

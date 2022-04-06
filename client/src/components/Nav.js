@@ -14,7 +14,7 @@ import {
   onAuthStateChanged,
   signOut,
 } from 'firebase/auth';
-import auth from '../firebase-config';
+import auth from '../modules/firebase-config';
 import Logo from '../assets/trippin1.svg';
 import userIcon from '../assets/user.svg';
 

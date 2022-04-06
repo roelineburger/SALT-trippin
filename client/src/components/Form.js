@@ -64,7 +64,7 @@ const Form = ({
   };
 
   return (
-    <div className="form-container__form">
+    <>
       <form className="form-container__form">
         <Autocomplete>
           <input
@@ -106,17 +106,24 @@ const Form = ({
             className="form-container__input"
           />
         </Autocomplete>
-        <button
-          onClick={calculateRoute}
-          className="form-container__button"
-        >
-          GET ROUTE
-        </button>
+        <section className="form-container__button">
+          <button
+            className={waypoints.length > 0
+              ? "form-container__button--clear"
+              : "form-container__button--clear--hidden"}
+            onClick={clearWaypoints}
+          >
+            CLEAR
+          </button>
+          <button
+            onClick={calculateRoute}
+            className=" form-container__button--get"
+          >
+            ROUTE
+          </button>
+        </section>
       </form>
-      {waypoints.length > 0 && (
-        <button className="form-container__button" onClick={clearWaypoints}>CLEAR MARKERS</button>
-      )}
-    </div>
+    </>
   );
 };
 
