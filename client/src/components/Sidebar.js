@@ -49,7 +49,6 @@ const Sidebar = ({
         destination={destination}
         setdirectionsResponse={setdirectionsResponse}
         setInfo={setInfo}
-        // setErrorAlert={setErrorAlert}
       />
       {info && (
         <TripInfo

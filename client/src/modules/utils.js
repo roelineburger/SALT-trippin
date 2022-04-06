@@ -9,9 +9,15 @@ const mileagePrice = (km, price) => {
 };
 
 const shortenString = (string) => {
-  const words = string.replace(/[a-z]/ig, '');
-  const addComma = words.replace(/ /, ',');
-  return addComma;
+  if (string.includes('day')) {
+    const days = string.replace(/ day/, 'd');
+    const hours = days.replace(/ hours/, 'h');
+    return hours;
+  }
+
+  const hours = string.replace(/ hours/, 'h');
+  const minutes = hours.replace(/ mins/, 'm');
+  return minutes;
 };
 
 export {

@@ -28,7 +28,6 @@ const Fuel = ({
   };
 
   const shortDur = shortenString(duration);
-
   useEffect(() => {
     getFuelPrice();
   }, [distance]);
@@ -62,7 +61,6 @@ const Fuel = ({
             <p className="form-routeinfo__text">
               {shortDur}
               {' '}
-              h
             </p>
           </section>
         </section>

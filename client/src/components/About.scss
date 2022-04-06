@@ -54,9 +54,18 @@
   text-align: center;
 }
 
+.profile {
+  &-icons {
+    margin: 0.7em 0.5em;
+  }
 
-.profile-image {
-width: 6em;
-height: 6em;
-padding: 1em;
+  &-name {
+  margin-bottom: 0.5em;
+  }
+
+  &-image {
+  width: 6em;
+  height: 6em;
+  padding: 1em;
+  }
 }
