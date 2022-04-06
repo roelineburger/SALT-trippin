@@ -75,15 +75,15 @@ const Map = ({
   }, []);
 
   const onMapClick = async (waypoint) => {
-    if (directionsResponse) {
-      const lat = parseFloat(waypoint.latLng.lat().toFixed(8));
-      const lng = parseFloat(waypoint.latLng.lng().toFixed(8));
+    if (!directionsResponse) return;
+    const lat = parseFloat(waypoint.latLng.lat().toFixed(8));
+    const lng = parseFloat(waypoint.latLng.lng().toFixed(8));
 
-      const geocoder = new window.google.maps.Geocoder();
-      const geocodeResult = await geocoder.geocode({
-        location: waypoint.latLng,
-      });
-
+    const geocoder = new window.google.maps.Geocoder();
+    const geocodeResult = await geocoder.geocode({
+      location: waypoint.latLng,
+    });
+    if (geocodeResult.results.length > 3) {
       setPoints((current) => [
         ...current,
         {
@@ -111,7 +111,7 @@ const Map = ({
         setErrorAlert={setErrorAlert}
       />
       {errorAlert ? (
-        <Alert className="warning-alert" onClose={removeWarning} severity="warning">Missing starting point or destination</Alert>
+        <Alert className="warning-alert" onClose={removeWarning} severity="warning">No route found.</Alert>
       ) : null}
       <GoogleMap
         zoom={5}
