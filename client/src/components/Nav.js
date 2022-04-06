@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Alert from '@mui/material/Alert';
 import './Nav.scss';
 import { Link } from 'react-router-dom';
 import Dialog from '@mui/material/Dialog';
@@ -18,13 +19,16 @@ import auth from '../modules/firebase-config';
 import Logo from '../assets/trippin1.svg';
 import userIcon from '../assets/user.svg';
 
-const Nav = ({ setUser, loggedIn, setLoggedIn }) => {
+const Nav = ({
+  setUser, loggedIn, setLoggedIn,
+}) => {
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
+  const [authAlert, setAuthAlert] = useState(false);
 
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
@@ -32,31 +36,29 @@ const Nav = ({ setUser, loggedIn, setLoggedIn }) => {
 
   const register = async () => {
     try {
-      const registeredUser = await createUserWithEmailAndPassword(
+      await createUserWithEmailAndPassword(
         auth,
         registerEmail,
         registerPassword,
       );
       setLoggedIn(true);
-      console.log(registeredUser);
+      setAuthAlert(false);
     } catch (error) {
-      console.log(error.message);
-      alert('test');
+      setAuthAlert(true);
     }
   };
 
   const login = async () => {
     try {
-      const loggedUser = await signInWithEmailAndPassword(
+      await signInWithEmailAndPassword(
         auth,
         loginEmail,
         loginPassword,
       );
       setLoggedIn(true);
-      console.log(loggedUser);
+      setAuthAlert(false);
     } catch (error) {
-      console.log(error.message);
-      alert('test');
+      setAuthAlert(true);
     }
   };
 
@@ -81,8 +83,15 @@ const Nav = ({ setUser, loggedIn, setLoggedIn }) => {
     setOpenSignUp(false);
   };
 
+  const removeWarning = () => {
+    setAuthAlert(false);
+  };
+
   return (
     <>
+      {authAlert ? (
+        <Alert className="login-alert" onClose={removeWarning} severity="warning">Incorrect credentials. Try again</Alert>
+      ) : null}
       <nav className="nav-container">
         <Link className="nav-container__link" to="/"><img src={Logo} alt="logo" className="nav-container__logo" /></Link>
 

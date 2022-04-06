@@ -8,6 +8,7 @@ import alex from "../assets/alex.png";
 import izabela from "../assets/izabela.png";
 
 const About = () => (
+
   <main className="about-page">
     <img className="about-page__image" src={road} alt="forest" />
     <section className="about-page__header">
@@ -37,6 +38,7 @@ const About = () => (
             <h4>Roeline</h4>
           </div>
           <div classsName="profile">
+            {' '}
             <img className="profile-image" src={alex} alt="aleex" />
             <h4>Alex</h4>
           </div>

@@ -13,3 +13,10 @@
     height: 10em;
   }
 }
+
+.warning-alert {
+  position: absolute;
+  top: 1em;
+  left: 25em;
+  z-index: 10;
+}

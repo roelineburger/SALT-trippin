@@ -12,6 +12,7 @@ import {
   Marker,
   InfoWindow,
 } from '@react-google-maps/api';
+import Alert from '@mui/material/Alert';
 import ParkLogo from '../assets/national.svg';
 import CampLogo from '../assets/camping.svg';
 import ViewpointLogo from '../assets/viewpoint.svg';
@@ -32,6 +33,7 @@ const Map = ({
   const [points, setPoints] = useState([]);
   const [directionsResponse, setdirectionsResponse] = useState(null);
   const [isFiltered, setIsFiltered] = useState(false);
+  const [errorAlert, setErrorAlert] = useState(false);
 
   const options = useMemo(
     () => ({
@@ -93,6 +95,10 @@ const Map = ({
     }
   };
 
+  const removeWarning = () => {
+    setErrorAlert(false);
+  };
+
   return isLoaded ? (
     <div>
       <Sidebar
@@ -102,7 +108,11 @@ const Map = ({
         setPoints={setPoints}
         user={user}
         loggedIn={loggedIn}
+        setErrorAlert={setErrorAlert}
       />
+      {errorAlert ? (
+        <Alert className="warning-alert" onClose={removeWarning} severity="warning">Missing starting point or destination</Alert>
+      ) : null}
       <GoogleMap
         zoom={5}
         mapContainerStyle={{ width: '100vw', height: '100vh' }}

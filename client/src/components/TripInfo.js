@@ -31,7 +31,6 @@ const Fuel = ({
 
   useEffect(() => {
     getFuelPrice();
-    console.log('fuel effect ran');
   }, [distance]);
 
   return (
