@@ -3,9 +3,9 @@
 There are a lot of road trip companion apps abroad, but In Sweden it is very hard to find such tools. In order to plan a road trip you would have to gather information from many different sources. That is why we created Trippin, a road trip planner with a focus on places like camping sites and national parks.
 With our app you are able to plan a road trip by setting an origin and a destination, and add your own waypoints along the route. You can get useful information like fuel cost estimate (in Swedish SEK), distance and travel time. You also have the possibility to create your own account where you can easily manage your saved trips.
 
-Frontend:
-. React - core framework for our SPA<br/>
-. Sass for styling
+Frontend:<br>
+. React - core framework for our SPA<br>
+. Sass for styling<br>
 
 Backend:
 . Express to store data in the Backend and serve it to the Front end
