@@ -4,7 +4,7 @@ There are a lot of road trip companion apps abroad, but In Sweden it is very har
 With our app you are able to plan a road trip by setting an origin and a destination, and add your own waypoints along the route. You can get useful information like fuel cost estimate (in Swedish SEK), distance and travel time. You also have the possibility to create your own account where you can easily manage your saved trips.
 
 Frontend:
-. React - core framework for our SPA
+. React - core framework for our SPA<br/>
 . Sass for styling
 
 Backend:
