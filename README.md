@@ -1,6 +1,6 @@
 # SALT-trippin
 
-There are a lot of road trip companion apps abroad, but In Sweden it is very hard to find such tools.<br>
+There are a lot of road trip companion apps abroad, but in Sweden it is very hard to find such tools.<br>
 In order to plan a road trip you would have to gather information from many different sources.<br>
 That is why we created Trippin, a road trip planner with a focus on places like camping sites and national parks.<br>
 With our app you are able to plan a road trip by setting an origin and a destination, and add your own waypoints along the route.<br>
