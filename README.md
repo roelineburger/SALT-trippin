@@ -22,7 +22,7 @@ Other:<br>
 . Heroku to deploy and host our application<br>
 
 The Team:<br>
-We are a group of four developers who met at </salt> in January 2022.<br>
+We are a group of four developers who met at SALT in January 2022.<br>
 Our mission was clear: learn to code, survive the bootcamp, drink enough water, Oh and TAKE BREAKS!<br>
 We are proud to showcase our Graduation project: TRIPPIN.<br>
 Roeline Burger: https://github.com/roelineburger<br>
